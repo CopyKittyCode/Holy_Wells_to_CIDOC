@@ -1,16 +1,23 @@
 <?xml version="1.0"?>
-<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xml:base="http://www.w3.org/1999/02/22-rdf-syntax-ns"
+<rdf:RDF xmlns="http://ontology.holywells.link/ontology/"
+     xml:base="http://ontology.holywells.link/ontology/"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:wdP="http://www.wikidata.org/prop/direct/"
+     xmlns:wdQ="http://www.wikidata.org/entity/"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology about="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-        <dc:date>2019-12-16</dc:date>
-        <dc:description>This is the RDF Schema for the RDF vocabulary terms in the RDF Namespace, defined in RDF 1.1 Concepts.</dc:description>
-        <dc:title>The RDF Concepts Vocabulary (RDF)</dc:title>
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:CRMgeo="http://www.ics.forth.gr/isl/CRMgeo/"
+     xmlns:schema="http://schema.org/"
+     xmlns:cidoc-crm="http://www.cidoc-crm.org/cidoc-crm/">
+    <owl:Ontology rdf:about="http://ontology.holywells.link/ontology">
+        <owl:imports rdf:resource="http://www.cidoc-crm.org/cidoc-crm/"/>
+        <owl:imports rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+        <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
     </owl:Ontology>
     
 
@@ -26,86 +33,30 @@
     
 
 
-    <!-- http://purl.org/dc/elements/1.1/date -->
+    <!-- http://schema.org/description -->
 
-    <owl:AnnotationProperty about="http://purl.org/dc/elements/1.1/date"/>
+    <owl:AnnotationProperty rdf:about="http://schema.org/description"/>
     
 
 
-    <!-- http://purl.org/dc/elements/1.1/description -->
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P87i_identifies -->
 
-    <owl:AnnotationProperty about="http://purl.org/dc/elements/1.1/description"/>
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P87i_identifies"/>
     
 
 
-    <!-- http://purl.org/dc/elements/1.1/title -->
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q10_defines_place -->
 
-    <owl:AnnotationProperty about="http://purl.org/dc/elements/1.1/title"/>
-    
-
-
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#direction -->
-
-    <owl:AnnotationProperty about="http://www.w3.org/1999/02/22-rdf-syntax-ns#direction">
-        <rdfs:comment>The base direction component of a CompoundLiteral.</rdfs:comment>
-        <rdfs:isDefinedBy resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-        <rdfs:label>direction</rdfs:label>
-        <rdfs:seeAlso resource="https://www.w3.org/TR/json-ld11/#the-rdf-compoundliteral-class-and-the-rdf-language-and-rdf-direction-properties"/>
-        <rdfs:domain resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#CompoundLiteral"/>
+    <owl:AnnotationProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q10_defines_place">
+        <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P87i_identifies"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP6_Declarative_Place"/>
     </owl:AnnotationProperty>
     
 
 
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#language -->
+    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
 
-    <owl:AnnotationProperty about="http://www.w3.org/1999/02/22-rdf-syntax-ns#language">
-        <rdfs:comment>The language component of a CompoundLiteral.</rdfs:comment>
-        <rdfs:isDefinedBy resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-        <rdfs:label>language</rdfs:label>
-        <rdfs:seeAlso resource="https://www.w3.org/TR/json-ld11/#the-rdf-compoundliteral-class-and-the-rdf-language-and-rdf-direction-properties"/>
-        <rdfs:domain resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#CompoundLiteral"/>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Datatypes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML -->
-
-    <rdfs:Datatype about="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML"/>
-    
-
-
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON -->
-
-    <rdfs:Datatype about="http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON"/>
-    
-
-
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral -->
-
-    <rdfs:Datatype about="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"/>
-    
-
-
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral -->
-
-    <rdfs:Datatype about="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"/>
-    
-
-
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#langString -->
-
-    <rdfs:Datatype about="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
     
 
 
@@ -120,74 +71,401 @@
     
 
 
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#first -->
+    <!-- http://ontology.holywells.link/ontology/object -->
 
-    <owl:ObjectProperty about="http://www.w3.org/1999/02/22-rdf-syntax-ns#first">
-        <rdfs:domain resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <rdfs:range resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdfs:comment>The first item in the subject RDF list.</rdfs:comment>
-        <rdfs:isDefinedBy resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-        <rdfs:label>first</rdfs:label>
+    <owl:ObjectProperty rdf:about="http://ontology.holywells.link/ontology/object">
+        <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P67_refers_to"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate -->
+    <!-- http://ontology.holywells.link/ontology/predicate -->
 
-    <owl:ObjectProperty about="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate">
-        <rdfs:domain resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
-        <rdfs:range resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdfs:comment>The predicate of the subject RDF statement.</rdfs:comment>
-        <rdfs:isDefinedBy resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-        <rdfs:label>predicate</rdfs:label>
+    <owl:ObjectProperty rdf:about="http://ontology.holywells.link/ontology/predicate">
+        <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P67_refers_to"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#rest -->
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q10_defines_place -->
 
-    <owl:ObjectProperty about="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest">
-        <rdfs:domain resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <rdfs:range resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <rdfs:comment>The rest of the subject RDF list after the first item.</rdfs:comment>
-        <rdfs:isDefinedBy resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-        <rdfs:label>rest</rdfs:label>
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q10_defines_place">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP5_Geometric_Place_Expression"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#subject -->
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q10i_place_is_defined_by -->
 
-    <owl:ObjectProperty about="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject">
-        <rdfs:domain resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
-        <rdfs:range resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdfs:comment>The subject of the subject RDF statement.</rdfs:comment>
-        <rdfs:isDefinedBy resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-        <rdfs:label>subject</rdfs:label>
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q10i_place_is_defined_by">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP6_Declarative_Place"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP5_Geometric_Place_Expression"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#type -->
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q11_approximates -->
 
-    <owl:ObjectProperty about="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">
-        <rdfs:domain resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdfs:range resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-        <rdfs:comment>The subject is an instance of a class.</rdfs:comment>
-        <rdfs:isDefinedBy resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-        <rdfs:label>type</rdfs:label>
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q11_approximates">
+        <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P121_overlaps_with"/>
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP6_Declarative_Place"/>
+        <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+        <rdfs:comment>Scope note:	This property approximates a phenomenal place which is defined in the same reference space. The property does not state the quality or accuracy of the approximation, but an overlap in area is the minimal requirement.</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#value -->
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q11i_is_approximated_by -->
 
-    <owl:ObjectProperty about="http://www.w3.org/1999/02/22-rdf-syntax-ns#value">
-        <rdfs:domain resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdfs:range resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdfs:comment>Idiomatic property used for structured values.</rdfs:comment>
-        <rdfs:isDefinedBy resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-        <rdfs:label>value</rdfs:label>
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q11i_is_approximated_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P121_overlaps_with"/>
+        <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP6_Declarative_Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q12_approximates -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q12_approximates">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP7_Declarative_Spacetime_Volume"/>
+        <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume"/>
+        <rdfs:comment>Scope note:	This property approximates a SP8 Spacetime Volume. The property does not state the quality or accuracy of the approximation, but an overlap of the spacetime volume is the minimal requirement.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q12i_approximates -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q12i_approximates">
+        <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP7_Declarative_Spacetime_Volume"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q13_approximates -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q13_approximates">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP10_Declarative_Time-Span"/>
+        <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"/>
+        <rdfs:comment>Scope note:	This property approximates a SP9 Time Intervall. The property does not state the quality or accuracy of the approximation, but an overlap in time is the minimal requirement.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q13i_approximates -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q13i_approximates">
+        <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP10_Declarative_Time-Span"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q14_defines_time -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q14_defines_time">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP14_Time_Expression"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP10_Declarative_Time-Span"/>
+        <rdfs:comment>Scope note:	This property associates an instance of SP14 Time Expression with the instance of SP10 Declarative Time Span it defines. Syntactic variants or use of different scripts may result in multiple instances of SP14 Time Expression defining exactly the same time span. Transformations between different temporal reference systems in general result in new definitions of time spans approximating each other.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q14i_defines_time -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q14i_defines_time">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP10_Declarative_Time-Span"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP14_Time_Expression"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q15_is_expressed_in_terms_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q15_is_expressed_in_terms_of">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP14_Time_Expression"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP11_Temporal_Reference_System"/>
+        <rdfs:comment>Scope note:	This property defines the temporal reference system in terms of which an SP14 Time Expression is formulated.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q15i_is_expressed_in_terms_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q15i_is_expressed_in_terms_of">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP11_Temporal_Reference_System"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP14_Time_Expression"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q16_defines_spacetime_volume -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q16_defines_spacetime_volume">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP12_Spacetime_Volume_Expression"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP7_Declarative_Spacetime_Volume"/>
+        <rdfs:comment>Scope note:	This property associates an instance of SP12 Spacetime Volume Expression with the instance of SP7 Declarative Spacetime Volume it defines. Syntactic variants or use of different scripts may result in multiple instances of SP12 Spacetime Volume Expressions defining exactly the same SP7 Declarative Spacetime Volume. Transformations between different temporal or spatial reference systems in general result in new definitions of Spacetime Volumes approximating each other.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q16i_defines_spacetime_volume -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q16i_defines_spacetime_volume">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP7_Declarative_Spacetime_Volume"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP12_Spacetime_Volume_Expression"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q17_is_expressed_in_terms_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q17_is_expressed_in_terms_of">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP12_Spacetime_Volume_Expression"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP11_Temporal_Reference_System"/>
+        <rdfs:comment>Scope note:	This property defines the temporal reference system in terms of which a SP12 Spacetime Volume Expression is formulated.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q17i_is_expressed_in_terms_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q17i_is_expressed_in_terms_of">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP11_Temporal_Reference_System"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP12_Spacetime_Volume_Expression"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q18_is_expressed_in_terms_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q18_is_expressed_in_terms_of">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP12_Spacetime_Volume_Expression"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP4_Spatial_Coordinate_Reference_System"/>
+        <rdfs:comment>Scope note:	This property defines the spatial coordinate reference system in terms of which a SP12 Spacetime Volume Expression is formulated.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q18i_is_expressed_in_terms_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q18i_is_expressed_in_terms_of">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP4_Spatial_Coordinate_Reference_System"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP12_Spacetime_Volume_Expression"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q19_has_reference_event -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q19_has_reference_event">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP11_Temporal_Reference_System"/>
+        <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E5_Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q19i_has_reference_event -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q19i_has_reference_event">
+        <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E5_Event"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP11_Temporal_Reference_System"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q1_occupied -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q1_occupied">
+        <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E4_Period"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP1_Phenomenal_Spacetime_Volume"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q1i_is_occupied_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q1i_is_occupied_by">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP1_Phenomenal_Spacetime_Volume"/>
+        <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E4_Period"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q2_occupied -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q2_occupied">
+        <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP1_Phenomenal_Spacetime_Volume"/>
+        <rdfs:comment>Scope note:	This property describes the 4 dimensional point sets (volumes) in spacetime that the trajectory of an instance of E18 Physical Thing occupies in spacetime in the course of its existence. We include in the occupied space the space filled by the matter of the physical thing and all inner spaces not accessible in regular function.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q2i_is_occupied_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q2i_is_occupied_by">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP1_Phenomenal_Spacetime_Volume"/>
+        <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q3_has_temporal_projection -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q3_has_temporal_projection">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP1_Phenomenal_Spacetime_Volume"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP13_Phenomenal_Time-Span"/>
+        <rdfs:comment>Scope note: 	This property describes the temporal projection of an instance of a SP1 Phenomenal Spacetime Volume. The property P4 has time-span is a shortcut of the more fully developed path from E4 Period through Q1 occupied, SP1 Phenomenal Spacetime Volume Q3 has temporal projection to E52 Time Span.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q3i_is_temporal_projection -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q3i_is_temporal_projection">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP13_Phenomenal_Time-Span"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP1_Phenomenal_Spacetime_Volume"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q4_has_spatial_projection -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q4_has_spatial_projection">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP1_Phenomenal_Spacetime_Volume"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP2_Phenomenal_Place"/>
+        <rdfs:comment>Scope note:	This property describes the spatial projection of an instance of a SP1 Phenomenal Spacetime Volume on an instance of SP2 Phenomenal Place. Even though the projection of a spacetime volume to one instance of SP3 Reference Space is unique, each reference space gives rise to another projection. The projections overlap at the time of the spacetime volume, the respective instances of SP2 Phenomenal Place may later drift apart, or earlier be yet apart.
+The property P7 took place at is a shortcut of the more fully developed path from E4 Period through Q1 occupied, SP1 Phenomenal Spacetime Volume Q4 has spatial projection to SP2 Phenomenal Place.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q4i_is_spatial_projection -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q4i_is_spatial_projection">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP2_Phenomenal_Place"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP1_Phenomenal_Spacetime_Volume"/>
+        <rdfs:comment>i of</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q5_defined_in -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q5_defined_in">
+        <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP3_Reference_Space"/>
+        <rdfs:comment>Scope note:	This property associates an instance of  E53 Place with the instance of  SP3 Reference Space it is defined in.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q5i_defined_in -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q5i_defined_in">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP3_Reference_Space"/>
+        <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q6_is_at_rest_in_relation_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q6_is_at_rest_in_relation_to">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP3_Reference_Space"/>
+        <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q6i_rests_in_relation_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q6i_rests_in_relation_to">
+        <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP3_Reference_Space"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q7_describes -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q7_describes">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP4_Spatial_Coordinate_Reference_System"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP3_Reference_Space"/>
+        <rdfs:comment>Scope note:	This property associates an instance of SP4 Spatial Coordinate Reference System with the instance of SP3 Reference Space for which it can be used to describe locations.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q7i_is_described_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q7i_is_described_by">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP3_Reference_Space"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP4_Spatial_Coordinate_Reference_System"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q8_is_fixed_on -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q8_is_fixed_on">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP4_Spatial_Coordinate_Reference_System"/>
+        <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E26_Physical_Feature"/>
+        <rdfs:comment>Scope note:	This property defines the physical reference features that ground a spatial coordinate reference system in the real world. 
+In surveying and geodesy this is part of the datum definition and is often a point identified by a physical feature on earth (sometimes monuments) where the earth approximation ellipsoid touches the earth and one axis of the ellipsoid runs through.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q8i_fixes -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q8i_fixes">
+        <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E26_Physical_Feature"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP4_Spatial_Coordinate_Reference_System"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q9_is_expressed_in_terms_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q9_is_expressed_in_terms_of">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP5_Geometric_Place_Expression"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP4_Spatial_Coordinate_Reference_System"/>
+        <rdfs:comment>Scope note:	This property defines the coordinate reference system in terms of which a geometric place expression is formulated.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q9i_terms_express -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q9i_terms_express">
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP4_Spatial_Coordinate_Reference_System"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP5_Geometric_Place_Expression"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/asGML -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/asGML">
+        <rdfs:subPropertyOf rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/Q10i_place_is_defined_by"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#gmlLiteral"/>
+        <rdfs:comment>Scope note:	</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/asWKT -->
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/CRMgeo/asWKT">
+        <rdfs:subPropertyOf rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/Q10i_place_is_defined_by"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#wktLiteral"/>
+        <rdfs:comment>Scope note:	</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -203,145 +481,1653 @@
     
 
 
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt -->
+    <!-- http://ontology.holywells.link/ontology/Archaeological_Site -->
 
-    <owl:Class about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt">
-        <rdfs:subClassOf resource="http://www.w3.org/2000/01/rdf-schema#Container"/>
-        <rdfs:comment>The class of containers of alternatives.</rdfs:comment>
-        <rdfs:isDefinedBy resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-        <rdfs:label>Alt</rdfs:label>
+    <owl:Class rdf:about="http://ontology.holywells.link/ontology/Archaeological_Site">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E27_Site"/>
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
     </owl:Class>
     
 
 
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag -->
+    <!-- http://ontology.holywells.link/ontology/Civil_Parish_in_Ireland -->
 
-    <owl:Class about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag">
-        <rdfs:subClassOf resource="http://www.w3.org/2000/01/rdf-schema#Container"/>
-        <rdfs:comment>The class of unordered containers.</rdfs:comment>
-        <rdfs:isDefinedBy resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-        <rdfs:label>Bag</rdfs:label>
+    <owl:Class rdf:about="http://ontology.holywells.link/ontology/Civil_Parish_in_Ireland">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E74_Group"/>
     </owl:Class>
     
 
 
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#CompoundLiteral -->
+    <!-- http://ontology.holywells.link/ontology/Country -->
 
-    <owl:Class about="http://www.w3.org/1999/02/22-rdf-syntax-ns#CompoundLiteral">
-        <rdfs:subClassOf resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdfs:comment>A class representing a compound literal.</rdfs:comment>
-        <rdfs:isDefinedBy resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-        <rdfs:label>CompoundLiteral</rdfs:label>
-        <rdfs:seeAlso resource="https://www.w3.org/TR/json-ld11/#the-rdf-compoundliteral-class-and-the-rdf-language-and-rdf-direction-properties"/>
+    <owl:Class rdf:about="http://ontology.holywells.link/ontology/Country">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E74_Group"/>
     </owl:Class>
     
 
 
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML -->
+    <!-- http://ontology.holywells.link/ontology/County_Of_Ireland -->
 
-    <owl:Class about="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML">
-        <rdfs:subClassOf resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <owl:Class rdf:about="http://ontology.holywells.link/ontology/County_Of_Ireland">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E74_Group"/>
     </owl:Class>
     
 
 
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON -->
+    <!-- http://ontology.holywells.link/ontology/Diocese -->
 
-    <owl:Class about="http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON">
-        <rdfs:subClassOf resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <owl:Class rdf:about="http://ontology.holywells.link/ontology/Diocese">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E74_Group"/>
     </owl:Class>
     
 
 
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#List -->
+    <!-- http://ontology.holywells.link/ontology/Diocese_Of_The_Catholic_Church -->
 
-    <owl:Class about="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">
-        <rdfs:subClassOf resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdfs:comment>The class of RDF Lists.</rdfs:comment>
-        <rdfs:isDefinedBy resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-        <rdfs:label>List</rdfs:label>
+    <owl:Class rdf:about="http://ontology.holywells.link/ontology/Diocese_Of_The_Catholic_Church">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
     </owl:Class>
     
 
 
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral -->
+    <!-- http://ontology.holywells.link/ontology/E89_illustrator_draws_hw -->
 
-    <owl:Class about="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">
-        <rdfs:subClassOf resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <owl:Class rdf:about="http://ontology.holywells.link/ontology/E89_illustrator_draws_hw">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"/>
     </owl:Class>
     
 
 
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#Property -->
+    <!-- http://ontology.holywells.link/ontology/Fountain -->
 
-    <owl:Class about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
-        <rdfs:subClassOf resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdfs:comment>The class of RDF properties.</rdfs:comment>
-        <rdfs:isDefinedBy resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-        <rdfs:label>Property</rdfs:label>
+    <owl:Class rdf:about="http://ontology.holywells.link/ontology/Fountain">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E25_Human-Made_Feature"/>
     </owl:Class>
     
 
 
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq -->
+    <!-- http://ontology.holywells.link/ontology/Holy_Well -->
 
-    <owl:Class about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq">
-        <rdfs:subClassOf resource="http://www.w3.org/2000/01/rdf-schema#Container"/>
-        <rdfs:comment>The class of ordered containers.</rdfs:comment>
-        <rdfs:isDefinedBy resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-        <rdfs:label>Seq</rdfs:label>
+    <owl:Class rdf:about="http://ontology.holywells.link/ontology/Holy_Well">
+        <rdfs:subClassOf rdf:resource="http://ontology.holywells.link/ontology/Fountain"/>
+        <rdfs:subClassOf rdf:resource="http://ontology.holywells.link/ontology/Structure_Of_Worship"/>
+        <rdfs:subClassOf rdf:resource="http://ontology.holywells.link/ontology/Water_Well"/>
     </owl:Class>
     
 
 
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement -->
+    <!-- http://ontology.holywells.link/ontology/Holy_Well_Semantic_Concept -->
 
-    <owl:Class about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement">
-        <rdfs:subClassOf resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdfs:comment>The class of RDF statements.</rdfs:comment>
-        <rdfs:isDefinedBy resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-        <rdfs:label>Statement</rdfs:label>
+    <owl:Class rdf:about="http://ontology.holywells.link/ontology/Holy_Well_Semantic_Concept">
+        <rdfs:subClassOf rdf:resource="http://ontology.holywells.link/ontology/Holy_Well"/>
     </owl:Class>
     
 
 
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral -->
+    <!-- http://ontology.holywells.link/ontology/Island_Country -->
 
-    <owl:Class about="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">
-        <rdfs:subClassOf resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <owl:Class rdf:about="http://ontology.holywells.link/ontology/Island_Country">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
     </owl:Class>
     
 
 
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#langString -->
+    <!-- http://ontology.holywells.link/ontology/Project -->
 
-    <owl:Class about="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">
-        <rdfs:subClassOf resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <owl:Class rdf:about="http://ontology.holywells.link/ontology/Project">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object"/>
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
     </owl:Class>
     
 
 
-    <!-- http://www.w3.org/2000/01/rdf-schema#Class -->
+    <!-- http://ontology.holywells.link/ontology/Sovereign_State -->
 
-    <owl:Class about="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <owl:Class rdf:about="http://ontology.holywells.link/ontology/Sovereign_State">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+    </owl:Class>
     
 
 
-    <!-- http://www.w3.org/2000/01/rdf-schema#Container -->
+    <!-- http://ontology.holywells.link/ontology/Spring -->
 
-    <owl:Class about="http://www.w3.org/2000/01/rdf-schema#Container"/>
+    <owl:Class rdf:about="http://ontology.holywells.link/ontology/Spring">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E27_Site"/>
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+    </owl:Class>
     
 
 
-    <!-- http://www.w3.org/2000/01/rdf-schema#Literal -->
+    <!-- http://ontology.holywells.link/ontology/Stream -->
 
-    <owl:Class about="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <owl:Class rdf:about="http://ontology.holywells.link/ontology/Stream">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E26_Physical_Feature"/>
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+    </owl:Class>
     
 
 
-    <!-- http://www.w3.org/2000/01/rdf-schema#Resource -->
+    <!-- http://ontology.holywells.link/ontology/Structure_Of_Worship -->
 
-    <owl:Class about="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <owl:Class rdf:about="http://ontology.holywells.link/ontology/Structure_Of_Worship">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E25_Human-Made_Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Successor_State -->
+
+    <owl:Class rdf:about="http://ontology.holywells.link/ontology/Successor_State">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Suffragan_Diocese -->
+
+    <owl:Class rdf:about="http://ontology.holywells.link/ontology/Suffragan_Diocese">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Townland -->
+
+    <owl:Class rdf:about="http://ontology.holywells.link/ontology/Townland">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E74_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Video -->
+
+    <owl:Class rdf:about="http://ontology.holywells.link/ontology/Video">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"/>
+        <rdfs:subClassOf rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Water_Source -->
+
+    <owl:Class rdf:about="http://ontology.holywells.link/ontology/Water_Source">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E27_Site"/>
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Water_Well -->
+
+    <owl:Class rdf:about="http://ontology.holywells.link/ontology/Water_Well">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E25_Human-Made_Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E16_Measurement -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E16_Measurement">
+        <rdfs:subClassOf rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/S4_Observation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing">
+        <rdfs:subClassOf rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP1_Phenomenal_Spacetime_Volume"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E47_Spatial_Coordinates -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E47_Spatial_Coordinates"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E49_Time_Appellation -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E49_Time_Appellation"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E4_Period -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E4_Period">
+        <rdfs:subClassOf rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP1_Phenomenal_Spacetime_Volume"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+        <rdfs:comment>Scope note:This class comprises 4 dimensional possibly fuzzy point sets (volumes) in physical spacetime regardless its true geometric form (S). They may derive their identity from being the extent of a material phenomenon or from being the interpretation of an expression (I) defining an extent in Space Time. The duration of existence of an instance of a spacetime volume is trivially its projection on time (E).
+Examples:
+•	the spacetime Volume of the Event of Ceasars murdering
+•	the spacetime Volume where and when the carbon 14 dating of the &quot;Schoeninger Speer II&quot; in 1996 took place
+•	the spatio-temporal trajectory of the H.M.S. Victory from its building to its actual location
+•	the spacetime volume defined by a polygon approximating the Danube river flood in Austria between 6th and 9th of August 2002
+	</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMdig/D10_Software_Execution -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMdig/D10_Software_Execution"/>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMdig/D11_Digital_Measurement_Event -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMdig/D11_Digital_Measurement_Event"/>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMdig/D12_Data_Transfer_Event -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMdig/D12_Data_Transfer_Event"/>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMdig/D13_Digital_Information_Carrier -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMdig/D13_Digital_Information_Carrier"/>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMdig/D14_Software -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMdig/D14_Software"/>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMdig/D21_Person_Name -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMdig/D21_Person_Name"/>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMdig/D23_Room -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMdig/D23_Room"/>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMdig/D29_Annotation_Object -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMdig/D29_Annotation_Object"/>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMdig/D2_Digitization_Process -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMdig/D2_Digitization_Process"/>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMdig/D30_Annotation_Event -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMdig/D30_Annotation_Event"/>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMdig/D35_Area -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMdig/D35_Area"/>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMdig/D3_Formal_Derivation -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMdig/D3_Formal_Derivation"/>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMdig/D7_Digital_Machine_Event -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMdig/D7_Digital_Machine_Event"/>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMdig/D8_Digital_Device -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMdig/D8_Digital_Device"/>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMdig/D9_Data_Object -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMdig/D9_Data_Object"/>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q1_occupied -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q1_occupied">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q1i_is_occupied_by -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q1i_is_occupied_by">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q6_is_at_rest_in_relation_to -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q6_is_at_rest_in_relation_to">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/Q6i_rests_in_relation_to -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q6i_rests_in_relation_to">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/S4_Observation -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMgeo/S4_Observation"/>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/SP10_Declarative_Time-Span -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMgeo/SP10_Declarative_Time-Span">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"/>
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"/>
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+        <rdfs:comment>Scope note:     	This class comprises instances of SP9 Time Intervalls that represent the Time Span defined by a SP 14 Time Expression. Thus they derive their identity through an expression defining an extent in time. Even though SP10 Declarative Time Spans have an unlimited precision, measurement devices and the possible precision within the SP11 Temporal Reference System impose limitations to the determination of a SP10 Declarative Time Span. The accuracy of a SP10 Declarative Time Spans depends upon the documentation and measurement method. 
+SP10 Declarative Time Spans may be used to approximate actual (phenomenal) Time-Spans of temporal entities.  
+
+Examples:  
+•	Extent in time defined by the expression “1961”
+•	Extent in time defined by the expression “From 12-17-1993 to 12-8-1996”
+•	Extent in time defined by the expression “14h30 – 16h22 4th July 1945”</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/SP11_Temporal_Reference_System -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMgeo/SP11_Temporal_Reference_System">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure"/>
+        <rdfs:comment>Scope note:	This class compromises systems(S) that are used to describe positions and extents in a Reference Time. If relativistic effects are negligible in the wider spacetime area of interest and the speeds of associated things, then there is only one unique global reference time. The typical way to measure time is to count the cycles of a periodic process for which we have a hypothesis of constant frequency, such as oscillations of a crystal, molecular arrangement, rotation of earth around itself or around the sun. The origin for a Temporal Reference System is fixed on a reference event. As long as the number of cycles passed from that reference event until now are known, the temporal reference system exists (E) and expressions in this Reference System can be interpreted with respect to the Reference Time. 
+A temporal reference system represents time as a continuous linear interpolation over the infinit series of cycles extended from the reference event to he past and the future, regardless of the temporal position of the mathematical point zero of an instance of E61 Time Primitive, such for instance the gregorian calender begins with the event an arbitrary positiong the point zero as beeing the date of the „Birth of Christ“. The actual date of birth of christ is regarded to be unknown and therefor is not the reference event. 
+The identity of a Temporal Reference System is defined through the type of periodic process it is based on, the reference event and through the distance of the reference event to the position of the mathematical point zero (I).
+A value in the Reference Time is a temporal position measured relative to a temporal reference system. ISO 8601 specifies the use of the Gregorian Calendar and 24 hour local or Coordinated Universal Time (UTC) for information interchange. 
+In ISO 19108 three common types of temporal reference systems are explicitly stated: calendars (used with clocks for greater resolution), temporal coordinate systems, and ordinal temporal reference systems. 
+Calendars and clocks are both based on interval scales. A calendar is a discrete temporal reference system that provides a basis for defining temporal position to a resolution of one day. A clock provides a basis for defining temporal position within a day. A clock must be used with a calendar in order to provide a complete description of a temporal position within a specific day. Every calendar provides a set of rules for composing a calendar date from a set of elements such as year, month, and day. In every calendar, years are numbered relative to the date of a reference event that defines a calendar era [ISO 19108].
+Specifying temporal position in terms of calendar date and time of day complicates the computation of distances between points and the functional description of temporal operations. A temporal coordinate system may be used to support applications of this kind. [ISO 19108].
+Ordinal temporal reference systems as specified in ISO 19108 are no instances of SP11 Temporal Reference Systems as they do not define cycles of a periodic process but define a system of time intervals based on reverence periods related to certain natural or cultural phenomena. 
+Examples:  
+•	Gregorian Calendar
+•	Coordinated Universal Time (UTC) 
+•	Julian date
+•	Greenwich time
+•	ISO 8601</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/SP12_Spacetime_Volume_Expression -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMgeo/SP12_Spacetime_Volume_Expression">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"/>
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+        <rdfs:comment>Scope Note:	This class comprises instances of E59 Primitive Value for spacetime volumes that should be implemented with appropriate validation, precision, interval logic and reference systems to express date ranges and geometries relevant to cultural documentation. A Spacetime Volume Expression may consist of one expression including temporal and spatial information like in GML or a different form of expressing spacetime in an integrated way like a formula containing all 4 dimensions.
+A Spacetime Volume Expression defines a SP7 Declarative Spacetime Volume, which means that the identity of the Spacetime Volume is derived from its geometric and temporal definition. This declarative Spacetime Volume allows for the application of all Spacetime Volume properties to relate phenomenal Spacetime Volumes of Periods and Physical Things to propositions about their spatial and temporal extents. 
+Examples:
+•	Spatial and temporal information in KML for the maximum extent of the Byzantine Empire
+•	a spacetime volume expressed in Geography Markup Language (GML) defining the spatial extent of France from 1792-1816 giving one spatial extent for each year
+</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/SP13_Phenomenal_Time-Span -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMgeo/SP13_Phenomenal_Time-Span">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"/>
+        <rdfs:comment>Scope note:     	This class comprises instances of SP9 Time Intervalls whose extent (U) and position is defined by the temporal projection of the spatiotemporal extent that can be observed or measured. Thus they derive their identity through the extent in time of a real world phenomenon (I). 
+
+Examples:  
+•	Duration of the phenomenal temporal extent of the Trafalgar battle
+•	The real duration of the Ming Dynasty 
+•	The real extent of the lifetime of Ceasar starting with his birth and ending with his death</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/SP14_Time_Expression -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMgeo/SP14_Time_Expression">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E49_Time_Appellation"/>
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"/>
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+        <rdfs:comment>Scope note: 	This class comprises definitions of temporal extents by quantitative expressions(S). An instance of SP14 Time Expression defines a declarative temporal interval using a temporal reference system. The identity of a SP14 Time Expression is based on its script or symbolic form (I). Several SP14 Time Expressions can denote the same SP10 Declarative Time Interval. 
+Instances of SP14 Time Expression that exist in one SP11 Temporal Reference System can be transformed to time expressions in other SP11 Temporal Reference Systems if there is a known and valid transformation.
+
+Examples:
+•	Temporal information in GML 
+&lt;gml:validTime&gt;&lt;gml:TimeInstant&gt; 
+&lt;gml:timePosition&gt;2005-11-28T13:00:00Z&lt;/gml:timePosition&gt; 
+&lt;/gml:TimeInstant&gt;&lt;/gml:validTime&gt; 
+•	1961
+•	From 12-17-1993 to 12-8-1996
+•	14h30 – 16h22 4th July 1945
+•	9.30 am 1.1.1999 to 2.00 pm 1.1.1999</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/SP15_Geometry -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMgeo/SP15_Geometry">
+        <rdfs:subClassOf rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP6_Declarative_Place"/>
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+        <rdfs:comment>Scope note: 	This class comprises ....(to be elaborated further)
+	Equivalent to:	http://www.opengis.net/ont/geosparql#Geometry   (geosparql)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/SP1_Phenomenal_Spacetime_Volume -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMgeo/SP1_Phenomenal_Spacetime_Volume"/>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/SP2_Phenomenal_Place -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMgeo/SP2_Phenomenal_Place">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:comment>Scope note: This class comprises instances of E53 Place (S) whose extent (U) and position is defined by the spatial projection of the spatiotemporal extent of a real world phenomenon that can be observed or measured. The spatial projection depends on the instance of S3 Reference Space onto which the extent of the phenomenon is projected. In general, there are no limitations to the number of Reference Spaces one could regard, but only few choices are relevant for the cultural-historical discourse. Typical for the archaeological discourse is to choose a reference space with respect to which the remains of some events would stay at the same place, for instance, relative to the bedrock of a continental plate. On the other side, for the citizenship of babies born in aeroplanes, the space in which the boundaries of the overflown state are defined may be relevant (I). Instances of SP2 Phenomenal Place exist as long as the respective reference space is defined. Note that we can talk in particular about what was at a place in a country before a city was built there, i.e., before the time the event occurred by which the place is defined, but we cannot talk about the place of earth before it came into existence due to lack of a reasonable reference space (E).
+Examples:
+• The place where the murder of Ceasar happened
+• Place on H.M.S. Victory at which Nelson died
+• The Place of the Varus Battle
+• The volume in space of my vine glass
+• The place the H.M.S Victory occupied over the seafloor when Nelson died
+• The space enclosed by this room
+• The space in borehole Nr. 405</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/SP3_Reference_Space -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMgeo/SP3_Reference_Space">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+        <rdfs:comment>Scope note:	This class comprises the (typically Euclidian) Space (S) that is at rest (I) in relation to an instance of E18 Physical Thing and extends (U) infinitely beyond it. It is the space in which we typically expect things to stay in place if no particular natural or human distortion processes occur. This definition requires that at least essential parts of the respective physical thing have a stability of form. The degree of this stability (e.g., elastic deformation of a ship on sea, landslides, geological deformations) limits the precision to which an instance of SP3 Reference Space is defined. It is possible to construct types of (non Euclidian) reference spaces which adapt to elastic deformations or have other geometric and dynamic properties to adapt to changes of form of the reference object, but they are of rare utility in the cultural-historical discourse. [ØE11]
+An instance of SP3 Reference Space begins to exist with the largest thing that is at rest in it and ceases to exist with its E6 Destruction[ØE12]. If other things are at rest in the same space and their time-span of existence falls within the one of the reference object, they share the same reference space (I). It has therefore the same temporal extent (time-span of existence) as the whole of the E18 Physical Things it is at rest with (E). 
+Examples:
+• The Space inside and around H.M.S. Victory while it is moving through the Atlantic Ocean
+• The Space inside and around the Eurasian Continental Plate
+• The Space inside and around the Earth
+• The Space inside and around the Solar system</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/SP4_Spatial_Coordinate_Reference_System -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMgeo/SP4_Spatial_Coordinate_Reference_System">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure"/>
+        <rdfs:comment>Scope note:	This class compromises systems that are used to describe locations in a SP3 Reference Space (S). An instance of SP4 Spatial Coordinate Reference System is composed of two parts: The first is a Coordinate System which is a set of coordinate axes with specified units of measurement and axis directions. The second part is a set of reference features at rest in the Reference Space it describes in the real world that relate the Coordinate System to real world locations (U) and fix it with respect to the reference object of its Reference Space .
+In surveying and geodesy, instance of SP4 Spatial Coordinate Reference System are called a datum. In the case of spatial coordinate reference systems for the earth the datum consists of the reference points and an ellipsoid that approximates the shape of the earth. National systems often use ellipsoids that approximate their territory best and shift them in an appropriate position relative to the earth while WGS84 is an ellipsoid for the whole earth and used in GPS receivers. In engineering a datum is a reference feature of an object used to create a reference system for measurement.The set of reference features in the real world are subset of E26 Physical Feature that are within the described reference space at rest and pertain to the E18 Physical Thing the reference space is at rest with.
+SP4 Spatial Coordinate Reference Systems have a validity for a certain spatial extent of the SP3 Reference Space and in addition a temporal validity. The combination of coordinate reference system and datum provides a unique identity (I). SP4 Spatial Coordinate Reference Systems may be defined for the earth, moving objects like planes or ships, linear features like boreholes or local systems. If there is a standardised identifier system available, such as EPSG codes, it should be used.
+Examples:
+• Longitude-Latitude(ellipsoidal Coordinate System) in WGS84 (Datum)
+• EPSG 3241
+• the coordinate system to describe locations on H.M.S. Victory taking the deck foundation of the middle mast as origin, the mast as z axis, the line at right angle to the bow line as x axis and a right angle to both as y axis.
+• The printed lines of the millimeter paper on which an archaeological feature is drawn</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/SP5_Geometric_Place_Expression -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMgeo/SP5_Geometric_Place_Expression">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E47_Spatial_Coordinates"/>
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"/>
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+        <rdfs:comment>Scope note: 	This class comprises definitions of places by quantitative expressions. An instance of SP5 Geometric Place Expression can be seen as a prescription of how to find the location meant by this expression in the real world (S), which is based on measuring where the quantities referred to in the expression lead to, beginning from the reference points of the respective reference system. 
+A form of expression may be geometries or map elements defined in a SP4 Spatial Coordinate Reference System that unambiguously identify locations in a SP3 Reference Space. Other forms may refer to areas confined by imaginary lines connecting Phenomenal Places such as trees, islands, cities, mountain tops. 
+The identity of a SP5 Place Expression is based on its script or symbolic form (I). Several SP5 Place Expressions can denote the same SP6 Declarative Place. 
+Instances of SP5 Geometric Place Expressions that exist in one SP4 Spatial Coordinate Reference System can be transformed to geometries in other SP4 Spatial Coordinate Reference System if there is a known and valid transformation. The product of the transformation in general defines a new instance of SP6 Declarative Place, albeit close to the source of the transformation. This can be due to distortions resulting from the transformation and the limited precision by which the relative position of the reference points differing between the respective reference systems are determined.      
+
+Examples:
+• Coordinate Information in GML like &lt;gml:Point gml:id=&quot;p21&quot; srsName=&quot;http://www.opengis.net/def/crs/EPSG/0/4326&quot;&gt; &lt;gml:coordinates&gt;45.67, 88.56&lt;/gml:coordinates&gt; &lt;/gml:Point&gt;
+• a polygon defining the extent of France</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/SP6_Declarative_Place -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMgeo/SP6_Declarative_Place">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"/>
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+        <rdfs:comment>Scope note: This class comprises instances of E53 Place (S) whose extent (U) and position is defined by a SP5 Geometric Place Expression (S). There is one implicit or explicit SP3 Reference Space in which the SP5 Place Expression describes the intended place. Even though SP5 Geometric Place Expressions have an unlimited precision, measurement devices and the precision of the position of reference features relating the SP4 Spatial Coordinate Reference System to a SP3 Reference Space impose limitations to the determination of an SP6 Declarative Place in the real world (U).
+Several SP5 Geometric Place Expressions may denote the same SP6 Declarative Place if their precision falls within the same range (I).
+Instances of SP6 Declarative Places may be used to approximate instances of E53 Places or parts of them. They may as well be used to define the location and spatial extent of property rights or national borders.
+
+Examples:
+• the place defined by &lt;gml:Point gml:id=&quot;p21&quot; srsName=&quot;http://www.opengis.net/def/crs/EPSG/0/4326&quot;&gt; &lt;gml:coordinates&gt;45.67, 88.56&lt;/gml:coordinates&gt; &lt;/gml:Point&gt;
+• the place defined by a line approximating the Danube river
+• The place of the Orinoco river defined in the map of Diego Ribeiro in 1529
+• the place defined through a polygon that represents the boundaries of the UK in the year 2003			
+	</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/SP7_Declarative_Spacetime_Volume -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMgeo/SP7_Declarative_Spacetime_Volume">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"/>
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume"/>
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+        <rdfs:comment>Scope note: 	This class comprises instances of SP8 Spacetime Volumes (S) whose temporal and spatial extent (U) and position is defined by a SP12 Spacetime Volume Expression. There is one implicit or explicit SP3 Reference Space in which the SP12 Spacetime Volume Expression describes the intended Spacetime Volume. As we restrict the model to Galilean physics and explicitly exclude systems with velocities close to the speed of light we do not model a “Reference Time” as it would be necessary for relativistic physics. This implies that there is only one Reference Time. 
+Even though SP12 Spacetime Volume Expressions have an unlimited precision, measurement devices and the precision of the position of reference features relating the SP4 Spatial Coordinate Reference System to a SP3 Reference Space impose limitations to the determination of the spatial part of a SP7 Declarative Spacetime Volume in the real world (U).
+The same limitation to precision is true for the temporal part of a SP7 Declarative Spacetime Volume due to precision of time measurement devices and of the determination of the reference event of a SP11 Temporal Reference System. 
+	Several SP12 Spacetime Volume Expressions may denote the same SP7 Declarative Spacetime Volume if their precision falls within the same range (I).
+Instances of SP7 Declarative Spacetime Volumes may be used to approximate instances of SP8 Spacetime Volumes or parts of them. They may as well be used to define the spatial and temporal extent of property rights or national borders.
+
+Examples:
+•	the spacetime volume defined by a polygon approximating the Danube river flood in Austria between 6th and 9th of August 2002 
+•	the spacetime volume of the Orinoco river in 1529 defined in the map of Diego Ribeiro in 1529
+•	the spacetime volume representing the boundaries of the UK from 1900-1950</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/CRMgeo/#SP1_Phenomenal_Spacetime_Volume -->
+
+    <owl:Class rdf:about="http://www.ics.forth.gr/isl/CRMgeo/#SP1_Phenomenal_Spacetime_Volume">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume"/>
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:comment>Scope note: This class comprises the 4 dimensional point sets (volumes) (S) which material phenomena (I) occupy in Space-Time (S). An instance of S1 Space Time Volume represents the true (I) extent of an instance of E4 Period in spacetime or the true (I) extent of the trajectory of an instance of E18 Physical Thing during the course of its existence, from production to destruction. A fuzziness of the extent lies in the very nature of the phenomenon, and not in the shortcomings of observation (U). The degree of fuzziness with respect to the scale of the phenomenon may vary widely, but the extent is never exact in a mathematical sense. According to modern physics, points in space-time are absolute with respect to the physical phenomena happening at them, regardless the so-called Galilean relativity of spatial or temporal reference systems in terms of which an observer may describe them. Following the theory, points relative to different spatial or temporal reference systems can be related if common points of phenomena in space-time are known in different systems. Instances of S1 Space-Time Volume are sets of such absolute space-time points of phenomena (I).The (Einstein) relativity of spatial and temporal distances is of no concern for the scales of things in the cultural-historical discourse, but does not alter the above principles.[ØE8] The temporal projection of an instance of SP1 Space-Time Volume defines an E52 Time-Span while its spatial projection defines an SP2 Phenomenal Place[ØE9]. The true location of an instance of E18 Physical Thing during some time-span can be regarded as the spatial projection of the restriction of its trajectory to the respective time-span.
+Examples:
+• The Space Time Volume of the Event of Ceasars murdering
+• The Space Time Volume where and when the carbon 14 dating of the &quot;Schoeninger Speer II&quot; in 1996 took place
+• The spatio-temporal trajectory of the H.M.S. Victory from its building to its actual location
+• The Space Time Volume of the temple in Abu Simbel before its removal</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#Feature -->
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#Geometry -->
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Geometry"/>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#gmlLiteral -->
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#gmlLiteral">
+        <rdfs:subClassOf rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP5_Geometric_Place_Expression"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#wktLiteral -->
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#wktLiteral">
+        <rdfs:subClassOf rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP5_Geometric_Place_Expression"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Book -->
+
+    <owl:Class rdf:about="http://www.wikidata.org/entity/Book">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E31_Document"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Database -->
+
+    <owl:Class rdf:about="http://www.wikidata.org/entity/Database">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Doctoral_Thesis -->
+
+    <owl:Class rdf:about="http://www.wikidata.org/entity/Doctoral_Thesis">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E31_Document"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Folklore_Collection -->
+
+    <owl:Class rdf:about="http://www.wikidata.org/entity/Folklore_Collection">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Geospatial_Dataset -->
+
+    <owl:Class rdf:about="http://www.wikidata.org/entity/Geospatial_Dataset">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"/>
+        <rdfs:subClassOf rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D9_Data_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Health_Condition -->
+
+    <owl:Class rdf:about="http://www.wikidata.org/entity/Health_Condition">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E3_Condition_State"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Human_Settlement -->
+
+    <owl:Class rdf:about="http://www.wikidata.org/entity/Human_Settlement">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Map -->
+
+    <owl:Class rdf:about="http://www.wikidata.org/entity/Map">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E31_Document"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Monograph -->
+
+    <owl:Class rdf:about="http://www.wikidata.org/entity/Monograph">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E31_Document"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Report -->
+
+    <owl:Class rdf:about="http://www.wikidata.org/entity/Report">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E31_Document"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Scholarly_Article -->
+
+    <owl:Class rdf:about="http://www.wikidata.org/entity/Scholarly_Article">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E31_Document"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Text_Corpus -->
+
+    <owl:Class rdf:about="http://www.wikidata.org/entity/Text_Corpus">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Web_GIS -->
+
+    <owl:Class rdf:about="http://www.wikidata.org/entity/Web_GIS">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"/>
+        <rdfs:subClassOf rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Adomnán -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Adomnán">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Adomnán_Name -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Adomnán_Name">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E41_Appellation"/>
+        <cidoc-crm:P67_refers_to rdf:resource="http://ontology.holywells.link/ontology/Adomnán"/>
+        <cidoc-crm:P90_has_value>Adomnán</cidoc-crm:P90_has_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Commons_Category -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Commons_Category">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E42_Identifier"/>
+        <cidoc-crm:P90_has_value>St Columbkill&apos;s Well, Inistioge</cidoc-crm:P90_has_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Dimension_kxRnXwX0HAM -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Dimension_kxRnXwX0HAM">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E54_Dimension"/>
+        <cidoc-crm:P91_has_unit rdf:resource="http://ontology.holywells.link/ontology/Second"/>
+        <cidoc-crm:P90_has_value rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">131</cidoc-crm:P90_has_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/E14_Condition_Assignment_Q122258940_Q55654238 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/E14_Condition_Assignment_Q122258940_Q55654238">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E14_Condition_Assessment"/>
+        <cidoc-crm:P140_assigned_attribute_to rdf:resource="http://www.wikidata.org/entity/Q122258940"/>
+        <cidoc-crm:P141_assigned rdf:resource="http://www.wikidata.org/entity/Q55654238"/>
+        <cidoc-crm:P177_assigned_property_of_type rdf:resource="http://ontology.holywells.link/ontology/E3_use_state"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/E14_Condition_Assignment_Q122258940_Q56556915 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/E14_Condition_Assignment_Q122258940_Q56556915">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E14_Condition_Assessment"/>
+        <cidoc-crm:P140_assigned_attribute_to rdf:resource="http://www.wikidata.org/entity/Q122258940"/>
+        <cidoc-crm:P141_assigned rdf:resource="http://www.wikidata.org/entity/Q56556915"/>
+        <cidoc-crm:P177_assigned_property_of_type rdf:resource="http://ontology.holywells.link/ontology/E3_conservation_state"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/E14_Condition_Assignment_Q122258940_Q63065035 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/E14_Condition_Assignment_Q122258940_Q63065035">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E14_Condition_Assessment"/>
+        <cidoc-crm:P140_assigned_attribute_to rdf:resource="http://www.wikidata.org/entity/Q122258940"/>
+        <cidoc-crm:P141_assigned rdf:resource="http://www.wikidata.org/entity/Q63065035"/>
+        <cidoc-crm:P177_assigned_property_of_type rdf:resource="http://ontology.holywells.link/ontology/E3_use_state"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/E15_Identifier_Assignment_Event_Q126456441_91_Q126875543 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/E15_Identifier_Assignment_Event_Q126456441_91_Q126875543">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E15_Identifier_Assignment"/>
+        <cidoc-crm:P140_assigned_attribute_to rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
+        <cidoc-crm:P16_used_specific_object rdf:resource="http://www.wikidata.org/entity/Q126875543"/>
+        <cidoc-crm:P177_assigned_property_of_type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E42_Identifier"/>
+        <cidoc-crm:P37_assigned rdf:resource="http://ontology.holywells.link/ontology/Inventory_Number_Q126456441_91_Q126875543"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/E3_conservation_state -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/E3_conservation_state">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E3_Condition_State"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/E3_use_state -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/E3_use_state">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E3_Condition_State"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/E65_Q126528008 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/E65_Q126528008">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E65_Creation"/>
+        <cidoc-crm:P14_carried_out_by rdf:resource="http://www.wikidata.org/entity/Q548721"/>
+        <cidoc-crm:P4_has_time-span rdf:resource="http://ontology.holywells.link/ontology/Publication_Date_Q126528008"/>
+        <cidoc-crm:P94_has_created rdf:resource="http://www.wikidata.org/entity/Q126528008"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/E65_Q126540348 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/E65_Q126540348">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E65_Creation"/>
+        <cidoc-crm:P14_carried_out_by rdf:resource="http://www.wikidata.org/entity/Q548721"/>
+        <cidoc-crm:P4_has_time-span rdf:resource="http://ontology.holywells.link/ontology/Publication_Date_Q126540348"/>
+        <cidoc-crm:P94_has_created rdf:resource="http://www.wikidata.org/entity/Q126540348"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/E65_Q126555558 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/E65_Q126555558">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E65_Creation"/>
+        <cidoc-crm:P14_carried_out_by rdf:resource="http://www.wikidata.org/entity/Q548721"/>
+        <cidoc-crm:P94_has_created rdf:resource="http://www.wikidata.org/entity/Q126555558"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/E65_Q130265908 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/E65_Q130265908">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E65_Creation"/>
+        <cidoc-crm:P14_carried_out_by rdf:resource="http://ontology.holywells.link/ontology/Q130265942_Group"/>
+        <cidoc-crm:P94_has_created rdf:resource="http://www.wikidata.org/entity/Q130265908"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/E65_Q130265942 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/E65_Q130265942">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E65_Creation"/>
+        <cidoc-crm:P14_carried_out_by rdf:resource="http://ontology.holywells.link/ontology/Q130265942_Group"/>
+        <cidoc-crm:P94_has_created rdf:resource="http://www.wikidata.org/entity/Q130265942_Project"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Feast_Day_Celebration_of_Q236326 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Feast_Day_Celebration_of_Q236326">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+        <cidoc-crm:P17_was_motivated_by rdf:resource="http://www.wikidata.org/entity/Q236326"/>
+        <cidoc-crm:P4_has_time-span rdf:resource="http://ontology.holywells.link/ontology/Feast_Day_Q236326"/>
+        <rdfs:label>Feast_Day_Celebration_of_Columba</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Feast_Day_Q236326 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Feast_Day_Q236326">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"/>
+        <rdf:type rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP10_Declarative_Time-Span"/>
+        <rdfs:label>Feast_Day_Columba</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Inventory_Number_Q126456441_91_Q126875543 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Inventory_Number_Q126456441_91_Q126875543">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E42_Identifier"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Irish_Sites_and_Monuments_Record_ID -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Irish_Sites_and_Monuments_Record_ID">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E42_Identifier"/>
+        <cidoc-crm:P2_has_type rdf:resource="http://ontology.holywells.link/ontology/Type_Irish_Sites_and_Monuments_Record_ID"/>
+        <cidoc-crm:P90_has_value>KK032-017011-</cidoc-crm:P90_has_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/June_9 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/June_9">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E49_Time_Appellation"/>
+        <rdfs:comment>June 9</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Mouth_of_Coum -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Mouth_of_Coum">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E26_Physical_Feature"/>
+        <cidoc-crm:P10_falls_within rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
+        <cidoc-crm:P46i_forms_part_of rdf:resource="http://www.wikidata.org/entity/Q134511675"/>
+        <cidoc-crm:P59i_is_located_on_or_within rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/OpenStreetMap_node_ID -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/OpenStreetMap_node_ID">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E42_Identifier"/>
+        <cidoc-crm:P2_has_type rdf:resource="http://ontology.holywells.link/ontology/Type_OpenStreetMap_node_ID"/>
+        <cidoc-crm:P90_has_value rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8513597500</cidoc-crm:P90_has_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Picture_Q130265942_Q122222699 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Picture_Q130265942_Q122222699">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"/>
+        <cidoc-crm:P148i_is_component_of rdf:resource="http://www.wikidata.org/entity/Q130265908"/>
+        <cidoc-crm:P62_depicts rdf:resource="http://www.wikidata.org/entity/Q122258940"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Publication_Date_Q126528008 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Publication_Date_Q126528008">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"/>
+        <cidoc-crm:P90_has_value rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1829-01-01T00:00:00Z</cidoc-crm:P90_has_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Publication_Date_Q126540348 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Publication_Date_Q126540348">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"/>
+        <cidoc-crm:P82a_begin_of_the_begin rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1897-01-01T00:00:00Z</cidoc-crm:P82a_begin_of_the_begin>
+        <cidoc-crm:P82b_end_of_the_end rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1913-01-01T00:00:00Z</cidoc-crm:P82b_end_of_the_end>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Q126456441_name -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Q126456441_name">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E41_Appellation"/>
+        <cidoc-crm:P67_refers_to rdf:resource="http://www.wikidata.org/entity/Q236326"/>
+        <rdfs:label>Columba_Well_Name</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Q130265942_Group -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Q130265942_Group">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E74_Group"/>
+        <rdfs:label>The Kilkenny Field Name Recording Project Group</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Recurring_Q2618 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Recurring_Q2618">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"/>
+        <rdf:type rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP14_Time_Expression"/>
+        <CRMgeo:Q14_defines_time rdf:resource="http://ontology.holywells.link/ontology/Feast_Day_Q236326"/>
+        <cidoc-crm:P3_has_note>RRULE:FREQ=YEARLY;BYMONTH=6;BYMONTHDAY=9</cidoc-crm:P3_has_note>
+        <rdfs:comment>Every year on June 9</rdfs:comment>
+        <rdfs:label>June 9</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/SP2_Coum -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/SP2_Coum">
+        <rdf:type rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP2_Phenomenal_Place"/>
+        <CRMgeo:Q11_approximates rdf:resource="http://ontology.holywells.link/ontology/SP6_Coum"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/SP5_Coum -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/SP5_Coum">
+        <rdf:type rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP5_Geometric_Place_Expression"/>
+        <cidoc-crm:P168_place_is_defined_by rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">52°29&apos;2.18&quot;N, 7°4&apos;50.77&quot;W</cidoc-crm:P168_place_is_defined_by>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/SP6_Coum -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/SP6_Coum">
+        <rdf:type rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP6_Declarative_Place"/>
+        <CRMgeo:Q10_defines_place rdf:resource="http://ontology.holywells.link/ontology/SP5_Coum"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Second -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Second">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Text_irelandsholywells.blogspot.com_2011_09_saint-canices-well-kilkenny.html -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Text_irelandsholywells.blogspot.com_2011_09_saint-canices-well-kilkenny.html">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object"/>
+        <rdf:language xml:lang="en"></rdf:language>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Type_Irish_Sites_and_Monuments_Record_ID -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Type_Irish_Sites_and_Monuments_Record_ID">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Type_OpenStreetMap_node_ID -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Type_OpenStreetMap_node_ID">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/URL_irelandsholywells.blogspot.com_2011_09_saint-canices-well-kilkenny.html -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/URL_irelandsholywells.blogspot.com_2011_09_saint-canices-well-kilkenny.html">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E42_Identifier"/>
+        <cidoc-crm:P90_has_value>irelandsholywells.blogspot.com_2011_09_saint-canices-well-kilkenny.html</cidoc-crm:P90_has_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Upload_Date_irelandsholywells.blogspot.com_2011_09_saint-canices-well-kilkenny.html -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Upload_Date_irelandsholywells.blogspot.com_2011_09_saint-canices-well-kilkenny.html">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"/>
+        <cidoc-crm:P90_has_value>4 Septembrie 2011</cidoc-crm:P90_has_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Upload_Date_kxRnXwX0HAM -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Upload_Date_kxRnXwX0HAM">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"/>
+        <cidoc-crm:P90_has_value rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-05-19T00:00:00Z</cidoc-crm:P90_has_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Upload_irelandsholywells.blogspot.com_2011_09_saint-canices-well-kilkenny.html -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Upload_irelandsholywells.blogspot.com_2011_09_saint-canices-well-kilkenny.html">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E63_Beginning_of_Existence"/>
+        <cidoc-crm:P11_had_participant rdf:resource="http://ontology.holywells.link/ontology/Adomnán"/>
+        <cidoc-crm:P4_has_time-span rdf:resource="http://ontology.holywells.link/ontology/Upload_Date_irelandsholywells.blogspot.com_2011_09_saint-canices-well-kilkenny.html"/>
+        <cidoc-crm:P92_brought_into_existence rdf:resource="http://ontology.holywells.link/ontology/Text_irelandsholywells.blogspot.com_2011_09_saint-canices-well-kilkenny.html"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Upload_kxRnXwX0HAM -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Upload_kxRnXwX0HAM">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E63_Beginning_of_Existence"/>
+        <cidoc-crm:P4_has_time-span rdf:resource="http://ontology.holywells.link/ontology/Upload_Date_kxRnXwX0HAM"/>
+        <cidoc-crm:P92_brought_into_existence rdf:resource="http://ontology.holywells.link/ontology/YouTube_Video_kxRnXwX0HAM"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Webpage_irelandsholywells.blogspot.com_2011_09_saint-canices-well-kilkenny.html -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Webpage_irelandsholywells.blogspot.com_2011_09_saint-canices-well-kilkenny.html">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"/>
+        <rdf:type rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+        <cidoc-crm:P165_incorporates rdf:resource="http://ontology.holywells.link/ontology/Text_irelandsholywells.blogspot.com_2011_09_saint-canices-well-kilkenny.html"/>
+        <cidoc-crm:P1_is_identified_by rdf:resource="http://ontology.holywells.link/ontology/URL_irelandsholywells.blogspot.com_2011_09_saint-canices-well-kilkenny.html"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Wiki_Loves_Monuments_ID -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Wiki_Loves_Monuments_ID">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E42_Identifier"/>
+        <cidoc-crm:P90_has_value>IE-KK-0316</cidoc-crm:P90_has_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/YT_ID_kxRnXwX0HAM -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/YT_ID_kxRnXwX0HAM">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E42_Identifier"/>
+        <cidoc-crm:P90_has_value>kxRnXwX0HAM</cidoc-crm:P90_has_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/YouTube_Video_kxRnXwX0HAM -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/YouTube_Video_kxRnXwX0HAM">
+        <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Video"/>
+        <cidoc-crm:P1_is_identified_by rdf:resource="http://ontology.holywells.link/ontology/YT_ID_kxRnXwX0HAM"/>
+        <cidoc-crm:P43_has_dimension rdf:resource="http://ontology.holywells.link/ontology/Dimension_kxRnXwX0HAM"/>
+        <cidoc-crm:P67_refers_to rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/Image_Inistioge%20Saint%20Columbkille%27s%20Well.png -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Image_Inistioge%20Saint%20Columbkille%27s%20Well.png">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"/>
+        <rdf:type rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+        <cidoc-crm:P1_is_identified_by rdf:resource="http://ontology.holywells.link/ontology/URL_Inistioge%20Saint%20Columbkille%27s%20Well.png"/>
+        <cidoc-crm:P62_depicts rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/SP2_Columbkille&apos;s_Well -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/SP2_Columbkille&apos;s_Well">
+        <rdf:type rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP2_Phenomenal_Place"/>
+        <CRMgeo:Q11_approximates rdf:resource="http://ontology.holywells.link/ontology/SP6_Columbkille&apos;s_Well"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/SP5_Columbkille&apos;s_Well -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/SP5_Columbkille&apos;s_Well">
+        <rdf:type rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP5_Geometric_Place_Expression"/>
+        <cidoc-crm:P168_place_is_defined_by rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">52°29&apos;21.2597&quot;N, 7°4&apos;5.4448&quot;W</cidoc-crm:P168_place_is_defined_by>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/SP6_Columbkille&apos;s_Well -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/SP6_Columbkille&apos;s_Well">
+        <rdf:type rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP6_Declarative_Place"/>
+        <CRMgeo:Q10_defines_place rdf:resource="http://ontology.holywells.link/ontology/SP5_Columbkille&apos;s_Well"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/URL_Inistioge%20Saint%20Columbkille%27s%20Well.png -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/URL_Inistioge%20Saint%20Columbkille%27s%20Well.png">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E42_Identifier"/>
+        <cidoc-crm:P90_has_value rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://commons.wikimedia.org/wiki/Special:FilePath/Inistioge%20Saint%20Columbkille%27s%20Well.png</cidoc-crm:P90_has_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/http://ontology.holywells.link/ontology/E65_Picture_Q130265942_Q122222699 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/http://ontology.holywells.link/ontology/E65_Picture_Q130265942_Q122222699">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E65_Creation"/>
+        <cidoc-crm:P14_carried_out_by rdf:resource="http://ontology.holywells.link/ontology/Q130265942_Group"/>
+        <cidoc-crm:P94_has_created rdf:resource="http://ontology.holywells.link/ontology/Picture_Q130265942_Q122222699"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q104266220 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q104266220">
+        <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Townland"/>
+        <rdfs:label>Inistioge_Q104266220</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q114439798 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q114439798">
+        <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Holy_Well_Semantic_Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q120966194 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q120966194">
+        <rdf:type rdf:resource="http://www.wikidata.org/entity/Database"/>
+        <rdf:type rdf:resource="http://www.wikidata.org/entity/Web_GIS"/>
+        <cidoc-crm:P67_refers_to rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
+        <schema:description>the map / search facility that provides access to the records of the National Monuments Service &quot;Sites and Monuments Record&quot; (SMR) and the National Inventory of Architectural Heritage</schema:description>
+        <rdfs:label>Historic Environment Viewer (Ireland)</rdfs:label>
+        <skos:altLabel xml:lang="en">HEV</skos:altLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q122189562 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q122189562">
+        <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Holy_Well_Semantic_Concept"/>
+        <cidoc-crm:P44_has_condition rdf:resource="http://www.wikidata.org/entity/preserved"/>
+        <rdfs:label>Saint Augustine&apos;s Well</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q122258940 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q122258940">
+        <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Holy_Well_Semantic_Concept"/>
+        <rdfs:label>Toberbride</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q122302608 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q122302608">
+        <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Holy_Well_Semantic_Concept"/>
+        <cidoc-crm:P15i_influenced rdf:resource="http://www.wikidata.org/entity/Q86"/>
+        <rdfs:label>St. Kieran’s Well</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q126374601 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q126374601">
+        <rdf:type rdf:resource="http://www.wikidata.org/entity/Monograph"/>
+        <cidoc-crm:P70_documents rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
+        <schema:description xml:lang="en">book by Owen O&apos;Kelly describing the townlands of Co. Kilkenny and their monuments</schema:description>
+        <rdfs:label>O&apos;Kelly: The Place-Names of County Kilkenny</rdfs:label>
+        <skos:altLabel xml:lang="en">The Place-Names of COUNTY KILKENNY</skos:altLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q126393245 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q126393245">
+        <rdf:type rdf:resource="http://www.wikidata.org/entity/Folklore_Collection"/>
+        <rdf:type rdf:resource="http://www.wikidata.org/entity/Text_Corpus"/>
+        <cidoc-crm:P67_refers_to rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
+        <rdfs:label>The Schools&apos; Collection</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q126454603 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q126454603">
+        <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Holy_Well_Semantic_Concept"/>
+        <cidoc-crm:P44_has_condition rdf:resource="http://www.wikidata.org/entity/Q63065035"/>
+        <rdfs:label>St. Mogue&apos;s Well</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q126456441 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q126456441">
+        <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Archaeological_Site"/>
+        <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Holy_Well"/>
+        <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Holy_Well_Semantic_Concept"/>
+        <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Water_Source"/>
+        <cidoc-crm:P10_falls_within rdf:resource="http://www.wikidata.org/entity/Q104266220"/>
+        <cidoc-crm:P10_falls_within rdf:resource="http://www.wikidata.org/entity/Q180231"/>
+        <cidoc-crm:P10_falls_within rdf:resource="http://www.wikidata.org/entity/Q27"/>
+        <cidoc-crm:P10_falls_within rdf:resource="http://www.wikidata.org/entity/Q60554507"/>
+        <cidoc-crm:P10_falls_within rdf:resource="http://www.wikidata.org/entity/Q873607"/>
+        <cidoc-crm:P1_is_identified_by rdf:resource="http://ontology.holywells.link/ontology/Commons_Category"/>
+        <cidoc-crm:P1_is_identified_by rdf:resource="http://ontology.holywells.link/ontology/Irish_Sites_and_Monuments_Record_ID"/>
+        <cidoc-crm:P1_is_identified_by rdf:resource="http://ontology.holywells.link/ontology/OpenStreetMap_node_ID"/>
+        <cidoc-crm:P1_is_identified_by rdf:resource="http://ontology.holywells.link/ontology/Q126456441_name"/>
+        <cidoc-crm:P1_is_identified_by rdf:resource="http://ontology.holywells.link/ontology/Wiki_Loves_Monuments_ID"/>
+        <CRMgeo:Q4_has_spatial_projection rdf:resource="http://ontology.holywells.link/ontology/SP2_Columbkille&apos;s_Well"/>
+        <schema:description xml:lang="en">holy well in Inistioge</schema:description>
+        <schema:description xml:lang="ar">موقع أثري في مقاطعة كيلكيني، جمهورية أيرلند</schema:description>
+        <rdfs:label>Columbkille&apos;s Well</rdfs:label>
+        <skos:altLabel xml:lang="en">Saint Columbkille&apos;s Well</skos:altLabel>
+        <skos:altLabel xml:lang="en">St Colombkille&apos;s Well</skos:altLabel>
+        <skos:altLabel xml:lang="en">St Columbkill&apos;s Well</skos:altLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q126478185 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q126478185">
+        <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Holy_Well_Semantic_Concept"/>
+        <rdfs:label>Hermit&apos;s Well</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q126507417 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q126507417">
+        <rdf:type rdf:resource="http://www.wikidata.org/entity/Report"/>
+        <rdf:type rdf:resource="http://www.wikidata.org/entity/Scholarly_Article"/>
+        <cidoc-crm:P70_documents rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
+        <rdfs:label>Urban Archaeological Survey - County Kilkenny</rdfs:label>
+        <owl:versionInfo>unpublished</owl:versionInfo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q126528008 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q126528008">
+        <rdf:type rdf:resource="http://www.wikidata.org/entity/Map"/>
+        <cidoc-crm:P62_depicts rdf:resource="http://www.wikidata.org/entity/Q27"/>
+        <cidoc-crm:P70_documents rdf:resource="http://ontology.holywells.link/ontology/E14_Condition_Assignment_Q122258940_Q55654238"/>
+        <cidoc-crm:P70_documents rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
+        <rdfs:label>6 Inch First Edition Ordnance Survey map of Ireland</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q126540348 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q126540348">
+        <rdf:type rdf:resource="http://www.wikidata.org/entity/Map"/>
+        <cidoc-crm:P62_depicts rdf:resource="http://www.wikidata.org/entity/Q27"/>
+        <cidoc-crm:P70_documents rdf:resource="http://ontology.holywells.link/ontology/E14_Condition_Assignment_Q122258940_Q55654238"/>
+        <cidoc-crm:P70_documents rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
+        <rdfs:label>25 inch mapping series (Ireland)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q126555558 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q126555558">
+        <rdf:type rdf:resource="http://www.wikidata.org/entity/Map"/>
+        <cidoc-crm:P62_depicts rdf:resource="http://www.wikidata.org/entity/Q27"/>
+        <cidoc-crm:P70_documents rdf:resource="http://ontology.holywells.link/ontology/E14_Condition_Assignment_Q122258940_Q55654238"/>
+        <cidoc-crm:P70_documents rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
+        <rdfs:label>6 Inch Last Edition Ordnance Survey map of Ireland</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q126875543 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q126875543">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+        <rdf:type rdf:resource="http://www.wikidata.org/entity/Doctoral_Thesis"/>
+        <cidoc-crm:P70_documents rdf:resource="http://ontology.holywells.link/ontology/E14_Condition_Assignment_Q122258940_Q56556915"/>
+        <cidoc-crm:P70_documents rdf:resource="http://ontology.holywells.link/ontology/E14_Condition_Assignment_Q122258940_Q63065035"/>
+        <cidoc-crm:P70_documents rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
+        <rdfs:label>Padraig Ó Dálaigh: The holy wells of County Kilkenny II</rdfs:label>
+        <owl:versionInfo>unpublished</owl:versionInfo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q127278549 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q127278549">
+        <rdf:type rdf:resource="http://www.wikidata.org/entity/Book"/>
+        <cidoc-crm:P70_documents rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
+        <rdfs:label>Nooks and Corners of County Kilkenny by Paris Anderson</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q130265580 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q130265580">
+        <rdf:type rdf:resource="http://www.wikidata.org/entity/Monograph"/>
+        <cidoc-crm:P70_documents rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
+        <rdfs:label>Bruce Misstear: Wells and Wellbeing - The Hydrogeology of Irish Holy Wells, 2023</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q130265908 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q130265908">
+        <rdf:type rdf:resource="http://www.wikidata.org/entity/Monograph"/>
+        <rdfs:label>Alan Counihan/ Dearbhala Ledwidge: Meitheal na bPáirceanna - The Kilkenny Field Name Recording Project, 2016</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q130265942_Project -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q130265942_Project">
+        <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Project"/>
+        <rdfs:label>The Kilkenny Field Name Recording Project Project</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q130284129 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q130284129">
+        <rdf:type rdf:resource="http://www.wikidata.org/entity/Map"/>
+        <cidoc-crm:P70_documents rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
+        <rdfs:label>6 inch Second Edition Ordnance Survey map of County Kilkenny,Q4006</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q132817615 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q132817615">
+        <rdf:type rdf:resource="http://www.wikidata.org/entity/Geospatial_Dataset"/>
+        <rdf:type rdf:resource="http://www.wikidata.org/entity/Report"/>
+        <cidoc-crm:P70_documents rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
+        <rdfs:label>Survey of Holy Wells County Kilkenny Phase 1 and Phase 2. A report prepared for Kilkenny County Council Heritage Office as an action of the  Kilkenny Heritage Plan</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q133809285 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q133809285">
+        <rdf:type rdf:resource="http://www.wikidata.org/entity/Monograph"/>
+        <cidoc-crm:P70_documents rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
+        <rdfs:label>St. Columcille &amp; St. Mary&apos;s Graveyard Inscriptions Inistioge, Co. Kilkenny</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q134511675 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q134511675">
+        <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Stream"/>
+        <CRMgeo:Q4_has_spatial_projection rdf:resource="http://ontology.holywells.link/ontology/SP2_Coum"/>
+        <rdfs:label>Coum</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q180231 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q180231">
+        <rdf:type rdf:resource="http://ontology.holywells.link/ontology/County_Of_Ireland"/>
+        <rdfs:label>County Kilkenny</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q236326 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q236326">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E21_Person"/>
+        <rdfs:label>Columba</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q27 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q27">
+        <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Country"/>
+        <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Island_Country"/>
+        <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Sovereign_State"/>
+        <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Successor_State"/>
+        <rdfs:label>Ireland</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q3146899 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q3146899">
+        <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Suffragan_Diocese"/>
+        <rdfs:label>Type Diocese Of The Catholic Church</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q373074 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q373074">
+        <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Suffragan_Diocese"/>
+        <rdfs:label>Type Suffragan Diocese</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q486972 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q486972">
+        <rdf:type rdf:resource="http://www.wikidata.org/entity/Human_Settlement"/>
+        <rdfs:label>Inistioge2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q548721 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q548721">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+        <rdfs:label>British Ordnance Survey</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q55654238 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q55654238">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E3_Condition_State"/>
+        <cidoc-crm:P2_has_type rdf:resource="http://ontology.holywells.link/ontology/E3_use_state"/>
+        <rdfs:label>in use</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q56556915 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q56556915">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E3_Condition_State"/>
+        <cidoc-crm:P2_has_type rdf:resource="http://ontology.holywells.link/ontology/E3_conservation_state"/>
+        <rdfs:label>demolished or destroyed</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q60554507 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q60554507">
+        <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Civil_Parish_in_Ireland"/>
+        <cidoc-crm:P15i_influenced rdf:resource="http://www.wikidata.org/entity/Q126478185"/>
+        <rdfs:label>Inistioge_Q60554507</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q63065035 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q63065035">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E3_Condition_State"/>
+        <cidoc-crm:P2_has_type rdf:resource="http://ontology.holywells.link/ontology/E3_use_state"/>
+        <rdfs:label>abandoned</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q86 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q86">
+        <rdf:type rdf:resource="http://www.wikidata.org/entity/Health_Condition"/>
+        <rdfs:label>headache</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q873607 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q873607">
+        <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Diocese"/>
+        <cidoc-crm:P2_has_type rdf:resource="http://www.wikidata.org/entity/Q373074"/>
+        <rdfs:label>Roman Catholic Diocese of Ossory</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q953927 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q953927">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E21_Person"/>
+        <cidoc-crm:P15i_influenced rdf:resource="http://www.wikidata.org/entity/Q126478185"/>
+        <rdfs:label>Fiacre</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/preserved -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/preserved">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E3_Condition_State"/>
+        <cidoc-crm:P2_has_type rdf:resource="http://ontology.holywells.link/ontology/E3_conservation_state"/>
+    </owl:NamedIndividual>
     
 
 
@@ -353,41 +2139,16 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <Description about="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML">
-        <rdfs:comment>The datatype of RDF literals storing fragments of HTML content</rdfs:comment>
-        <rdfs:isDefinedBy resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-        <rdfs:label>HTML</rdfs:label>
-        <rdfs:seeAlso resource="http://www.w3.org/TR/rdf11-concepts/#section-html"/>
-    </Description>
-    <Description about="http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON">
-        <rdfs:comment>The datatype of RDF literals storing JSON content.</rdfs:comment>
-        <rdfs:isDefinedBy resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-        <rdfs:label>JSON</rdfs:label>
-        <rdfs:seeAlso resource="https://www.w3.org/TR/json-ld11/#the-rdf-json-datatype"/>
-    </Description>
-    <Description about="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">
-        <rdfs:comment>The class of plain (i.e. untyped) literal values, as used in RIF and OWL 2</rdfs:comment>
-        <rdfs:isDefinedBy resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-        <rdfs:label>PlainLiteral</rdfs:label>
-        <rdfs:seeAlso resource="http://www.w3.org/TR/rdf-plain-literal/"/>
-    </Description>
-    <Description about="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">
-        <rdfs:comment>The datatype of XML literal values.</rdfs:comment>
-        <rdfs:isDefinedBy resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-        <rdfs:label>XMLLiteral</rdfs:label>
-    </Description>
-    <Description about="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">
-        <rdfs:comment>The datatype of language-tagged string values</rdfs:comment>
-        <rdfs:isDefinedBy resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-        <rdfs:label>langString</rdfs:label>
-        <rdfs:seeAlso resource="http://www.w3.org/TR/rdf11-concepts/#section-Graph-Literal"/>
-    </Description>
-    <Description about="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil">
-        <rdfs:comment>The empty list, with no items in it. If the rest of a list is nil then the list has no more items in it.</rdfs:comment>
-        <rdfs:isDefinedBy resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-        <rdfs:label>nil</rdfs:label>
-    </Description>
-</RDF>
+    <rdf:Description rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q10_defines_place">
+        <rdfs:comment>Scope note:	This property associates an instance of SP5 Geometric Place Expression with the instance of SP6 Declarative Place it defines. Syntactic variants or use of different scripts may result in multiple instances of SP5 Geometric Place Expression defining exactly the same place. Transformations between different reference systems in general result in new definitions of places approximating each other.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q1_occupied">
+        <rdfs:comment>Scope note:	This property associates an instance of E4 Period with the 4 dimensional point sets (volumes) in spacetime that it occupied. This instance of SP1 Phenomenal Spacetime Volume includes the trajectories of the participating physical things during their participation in the instance of E4 Period, the open spaces via which they have interacted and the spaces by which they had the potential to interact during that period or event in the way defined by the type of the respective period or event, such as the air in a meeting room transferring the voices. It also comprises the areas controlled by some military power. Therefore instances of E4 Period have fuzzy boundaries in spacetime.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.ics.forth.gr/isl/CRMgeo/Q6_is_at_rest_in_relation_to">
+        <rdfs:comment>Scope note:	This property associates an instance of SP3 Reference Space with the instance of E18 Physical Thing that is at rest in it. For all instances of E18 Physical Thing exist at least one reference space it is at rest with because of their relative stability of form. Larger constellations of matter may comprise many physical features that are at rest with them.</rdfs:comment>
+    </rdf:Description>
+</rdf:RDF>
 
 
 
