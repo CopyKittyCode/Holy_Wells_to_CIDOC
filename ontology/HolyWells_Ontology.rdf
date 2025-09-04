@@ -4,8 +4,8 @@
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:wdP="http://www.wikidata.org/prop/direct/"
-     xmlns:wdQ="http://www.wikidata.org/entity/"
+     xmlns:wdP="http://wikidata.org/prop/direct/"
+     xmlns:wdQ="http://wikidata.org/entity/"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -39,9 +39,183 @@
     
 
 
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P10_falls_within -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P10_falls_within"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P11_had_participant -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P11_had_participant"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P140_assigned_attribute_to -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P140_assigned_attribute_to"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P141_assigned -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P141_assigned"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P148i_is_component_of -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P148i_is_component_of"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P15i_influenced -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P15i_influenced"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P165_incorporates -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P165_incorporates"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P168_place_is_defined_by -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P168_place_is_defined_by"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P177_assigned_property_of_type -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P177_assigned_property_of_type"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P17_was_motivated_by -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P17_was_motivated_by"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P2_has_type -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P2_has_type"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P37_assigned -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P37_assigned"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P3_has_note -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P3_has_note"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P43_has_dimension -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P43_has_dimension"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P44_has_condition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P44_has_condition"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P46i_forms_part_of -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P46i_forms_part_of"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P4_has_time-span -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P4_has_time-span"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P59i_is_located_on_or_within -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P59i_is_located_on_or_within"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P62_depicts -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P62_depicts"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P70_documents -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P70_documents"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P82a_begin_of_the_begin -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P82a_begin_of_the_begin"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P82b_end_of_the_end -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P82b_end_of_the_end"/>
+    
+
+
     <!-- http://www.cidoc-crm.org/cidoc-crm/P87i_identifies -->
 
     <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P87i_identifies"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P90_has_value -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P90_has_value"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P91_has_unit -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P91_has_unit"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P92_brought_into_existence -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P92_brought_into_existence"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P94_has_created -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P94_has_created"/>
     
 
 
@@ -84,6 +258,18 @@
     <owl:ObjectProperty rdf:about="http://ontology.holywells.link/ontology/predicate">
         <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P67_refers_to"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P121_overlaps_with -->
+
+    <owl:ObjectProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P121_overlaps_with"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P67_refers_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P67_refers_to"/>
     
 
 
@@ -670,6 +856,18 @@ In surveying and geodesy this is part of the datum definition and is often a poi
     
 
 
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E14_Condition_Assessment -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E14_Condition_Assessment"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E15_Identifier_Assignment -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E15_Identifier_Assignment"/>
+    
+
+
     <!-- http://www.cidoc-crm.org/cidoc-crm/E16_Measurement -->
 
     <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E16_Measurement">
@@ -683,6 +881,78 @@ In surveying and geodesy this is part of the datum definition and is often a poi
     <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing">
         <rdfs:subClassOf rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP1_Phenomenal_Spacetime_Volume"/>
     </owl:Class>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E21_Person -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E21_Person"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E25_Human-Made_Feature -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E25_Human-Made_Feature"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E26_Physical_Feature -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E26_Physical_Feature"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E27_Site -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E27_Site"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E31_Document -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E31_Document"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E39_Actor -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E3_Condition_State -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E3_Condition_State"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E41_Appellation -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E41_Appellation"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E42_Identifier -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E42_Identifier"/>
     
 
 
@@ -703,6 +973,84 @@ In surveying and geodesy this is part of the datum definition and is often a poi
     <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E4_Period">
         <rdfs:subClassOf rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP1_Phenomenal_Spacetime_Volume"/>
     </owl:Class>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E53_Place -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E54_Dimension -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E54_Dimension"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E55_Type -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E5_Event -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E5_Event"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E63_Beginning_of_Existence -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E63_Beginning_of_Existence"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E65_Creation -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E65_Creation"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E74_Group -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E74_Group"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E7_Activity -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object"/>
     
 
 
@@ -1112,6 +1460,12 @@ Examples:
     
 
 
+    <!-- http://www.w3.org/2004/02/skos/core#Collection -->
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Collection"/>
+    
+
+
     <!-- http://www.wikidata.org/entity/Book -->
 
     <owl:Class rdf:about="http://www.wikidata.org/entity/Book">
@@ -1263,8 +1617,8 @@ Examples:
 
     <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Dimension_kxRnXwX0HAM">
         <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E54_Dimension"/>
-        <cidoc-crm:P91_has_unit rdf:resource="http://ontology.holywells.link/ontology/Second"/>
         <cidoc-crm:P90_has_value rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">131</cidoc-crm:P90_has_value>
+        <cidoc-crm:P91_has_unit rdf:resource="http://ontology.holywells.link/ontology/Second"/>
     </owl:NamedIndividual>
     
 
@@ -1653,9 +2007,9 @@ Examples:
 
     <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/YouTube_Video_kxRnXwX0HAM">
         <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Video"/>
+        <cidoc-crm:P67_refers_to rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
         <cidoc-crm:P1_is_identified_by rdf:resource="http://ontology.holywells.link/ontology/YT_ID_kxRnXwX0HAM"/>
         <cidoc-crm:P43_has_dimension rdf:resource="http://ontology.holywells.link/ontology/Dimension_kxRnXwX0HAM"/>
-        <cidoc-crm:P67_refers_to rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
     </owl:NamedIndividual>
     
 
@@ -1780,8 +2134,8 @@ Examples:
 
     <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q126374601">
         <rdf:type rdf:resource="http://www.wikidata.org/entity/Monograph"/>
-        <cidoc-crm:P70_documents rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
         <schema:description xml:lang="en">book by Owen O&apos;Kelly describing the townlands of Co. Kilkenny and their monuments</schema:description>
+        <cidoc-crm:P70_documents rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
         <rdfs:label>O&apos;Kelly: The Place-Names of County Kilkenny</rdfs:label>
         <skos:altLabel xml:lang="en">The Place-Names of COUNTY KILKENNY</skos:altLabel>
     </owl:NamedIndividual>
@@ -1816,6 +2170,9 @@ Examples:
         <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Holy_Well"/>
         <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Holy_Well_Semantic_Concept"/>
         <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Water_Source"/>
+        <CRMgeo:Q4_has_spatial_projection rdf:resource="http://ontology.holywells.link/ontology/SP2_Columbkille&apos;s_Well"/>
+        <schema:description xml:lang="en">holy well in Inistioge</schema:description>
+        <schema:description xml:lang="ar">موقع أثري في مقاطعة كيلكيني، جمهورية أيرلند</schema:description>
         <cidoc-crm:P10_falls_within rdf:resource="http://www.wikidata.org/entity/Q104266220"/>
         <cidoc-crm:P10_falls_within rdf:resource="http://www.wikidata.org/entity/Q180231"/>
         <cidoc-crm:P10_falls_within rdf:resource="http://www.wikidata.org/entity/Q27"/>
@@ -1826,9 +2183,6 @@ Examples:
         <cidoc-crm:P1_is_identified_by rdf:resource="http://ontology.holywells.link/ontology/OpenStreetMap_node_ID"/>
         <cidoc-crm:P1_is_identified_by rdf:resource="http://ontology.holywells.link/ontology/Q126456441_name"/>
         <cidoc-crm:P1_is_identified_by rdf:resource="http://ontology.holywells.link/ontology/Wiki_Loves_Monuments_ID"/>
-        <CRMgeo:Q4_has_spatial_projection rdf:resource="http://ontology.holywells.link/ontology/SP2_Columbkille&apos;s_Well"/>
-        <schema:description xml:lang="en">holy well in Inistioge</schema:description>
-        <schema:description xml:lang="ar">موقع أثري في مقاطعة كيلكيني، جمهورية أيرلند</schema:description>
         <rdfs:label>Columbkille&apos;s Well</rdfs:label>
         <skos:altLabel xml:lang="en">Saint Columbkille&apos;s Well</skos:altLabel>
         <skos:altLabel xml:lang="en">St Colombkille&apos;s Well</skos:altLabel>
