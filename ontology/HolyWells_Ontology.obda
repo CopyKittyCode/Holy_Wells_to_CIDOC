@@ -1,0 +1,68 @@
+[PrefixDeclaration]
+:		http://ontology.holywells.link/ontology/
+dc:		http://purl.org/dc/elements/1.1/
+owl:		http://www.w3.org/2002/07/owl#
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+wdP:		http://wikidata.org/prop/direct/
+wdQ:		http://wikidata.org/entity/
+xml:		http://www.w3.org/XML/1998/namespace
+xsd:		http://www.w3.org/2001/XMLSchema#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+skos:		http://www.w3.org/2004/02/skos/core#
+time:		http://www.w3.org/2006/time#2016
+terms:		http://purl.org/dc/terms/
+time1:		http://www.w3.org/2006/time#
+CRMgeo:		http://www.ics.forth.gr/isl/CRMgeo/
+schema:		http://schema.org/
+cidoc-crm:	http://www.cidoc-crm.org/cidoc-crm/
+
+[MappingDeclaration] @collection [[
+mappingId	Create and classify assignment event
+target		:E15_Identifier_Assignment_Event_{subject_q}_{inventory_id}_{collection_q} a cidoc-crm:E15_Identifier_Assignment . 
+source		SELECT inventory_id, subject_q, collection_q
+			FROM inventory_id_coll
+			WHERE inventory_id IS NOT NULL;
+
+mappingId	P16 used specific object
+target		:E15_Identifier_Assignment_Event_{subject_q}_{inventory_id}_{collection_q} cidoc-crm:P16_used_specific_object wdQ:{collection_q} . 
+source		SELECT inventory_id, subject_q, collection_q
+			FROM inventory_id_coll
+			WHERE inventory_id IS NOT NULL;
+
+mappingId	P37 assigned
+target		:E15_Identifier_Assignment_Event_{subject_q}_{inventory_id}_{collection_q} cidoc-crm:P37_assigned :Inventory_number_{subject_q}_{inventory_id}_{collection_q} . 
+source		SELECT inventory_id, subject_q, collection_q
+			FROM inventory_id_coll
+			WHERE inventory_id IS NOT NULL;
+
+mappingId	Create and classify inventory number
+target		:Inventory_number_{subject_q}_{inventory_id}_{collection_q} a cidoc-crm:E42_Identifier . 
+source		SELECT inventory_id, subject_q, collection_q
+			FROM inventory_id_coll
+			WHERE inventory_id IS NOT NULL;
+
+mappingId	P140 assigned attribute to
+target		:E15_Identifier_Assignment_Event_{subject_q}_{inventory_id}_{collection_q} cidoc-crm:P140_assigned_attribute_to wdQ:{subject_q} . 
+source		SELECT inventory_id, subject_q, collection_q
+			FROM inventory_id_coll
+			WHERE inventory_id IS NOT NULL;
+
+mappingId	P177 assigned property of type
+target		:E15_Identifier_Assignment_Event_{subject_q}_{inventory_id}_{collection_q} cidoc-crm:P177_assigned_property_of_type :E42_Identifier . :E42_Identifier a cidoc-crm:E55_Type . 
+source		SELECT inventory_id, subject_q, collection_q
+			FROM inventory_id_coll
+			WHERE inventory_id IS NOT NULL;
+
+mappingId	P70 documents
+target		wdQ:{object_q} cidoc-crm:P70_documents wdQ:{subject_q} . 
+source		SELECT subject_q,subject,object_q,object,instance_of_q,instance_of
+			FROM described_by_source
+			WHERE subject_q IS NOT NULL;
+
+mappingId	P70 documents(0)
+target		wdQ:{object_q} cidoc-crm:P70_documents wdQ:{subject_q} . 
+source		SELECT subject_q,subject,object_q,object,instance_of_q,instance_of
+			FROM described_by_source
+			WHERE subject_q IS NOT NULL;
+]]
+

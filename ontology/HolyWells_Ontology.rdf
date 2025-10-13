@@ -10,7 +10,9 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:time="http://www.w3.org/2006/time#2016"
      xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:time1="http://www.w3.org/2006/time#"
      xmlns:CRMgeo="http://www.ics.forth.gr/isl/CRMgeo/"
      xmlns:schema="http://schema.org/"
      xmlns:cidoc-crm="http://www.cidoc-crm.org/cidoc-crm/">
@@ -18,6 +20,7 @@
         <owl:imports rdf:resource="http://www.cidoc-crm.org/cidoc-crm/"/>
         <owl:imports rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
         <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <owl:imports rdf:resource="http://www.w3.org/2006/time#2016"/>
     </owl:Ontology>
     
 
@@ -1617,8 +1620,8 @@ Examples:
 
     <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Dimension_kxRnXwX0HAM">
         <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E54_Dimension"/>
-        <cidoc-crm:P90_has_value rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">131</cidoc-crm:P90_has_value>
         <cidoc-crm:P91_has_unit rdf:resource="http://ontology.holywells.link/ontology/Second"/>
+        <cidoc-crm:P90_has_value rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">131</cidoc-crm:P90_has_value>
     </owl:NamedIndividual>
     
 
@@ -1668,6 +1671,28 @@ Examples:
     
 
 
+    <!-- http://ontology.holywells.link/ontology/E15_Identifier_Assignment_Event_Q126456441_KHW056_Q132817615 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/E15_Identifier_Assignment_Event_Q126456441_KHW056_Q132817615">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E15_Identifier_Assignment"/>
+        <cidoc-crm:P140_assigned_attribute_to rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
+        <cidoc-crm:P16_used_specific_object rdf:resource="http://www.wikidata.org/entity/Q132817615"/>
+        <cidoc-crm:P177_assigned_property_of_type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E42_Identifier"/>
+        <cidoc-crm:P37_assigned rdf:resource="http://ontology.holywells.link/ontology/Inventory_Number_Q126456441_KHW056_Q132817615"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/E17_Type_Assignment_Q1371047_Q122258940 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/E17_Type_Assignment_Q1371047_Q122258940">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E17_Type_Assignment"/>
+        <cidoc-crm:P41_classified rdf:resource="http://www.wikidata.org/entity/Q122258940"/>
+        <cidoc-crm:P42_assigned rdf:resource="http://ontology.holywells.link/ontology/E55_Type_Holy_Well"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://ontology.holywells.link/ontology/E3_conservation_state -->
 
     <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/E3_conservation_state">
@@ -1681,6 +1706,18 @@ Examples:
     <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/E3_use_state">
         <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E3_Condition_State"/>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/E55_Type_Holy_Well -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/E55_Type_Holy_Well"/>
+    
+
+
+    <!-- http://ontology.holywells.link/ontology/E55_Type_Holy_Well_Semantic_Concept -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/E55_Type_Holy_Well_Semantic_Concept"/>
     
 
 
@@ -1711,6 +1748,7 @@ Examples:
     <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/E65_Q126555558">
         <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E65_Creation"/>
         <cidoc-crm:P14_carried_out_by rdf:resource="http://www.wikidata.org/entity/Q548721"/>
+        <cidoc-crm:P4_has_time-span rdf:resource="http://www.wikidata.org/entity/Publication_Date_Q126555558"/>
         <cidoc-crm:P94_has_created rdf:resource="http://www.wikidata.org/entity/Q126555558"/>
     </owl:NamedIndividual>
     
@@ -1752,6 +1790,7 @@ Examples:
     <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Feast_Day_Q236326">
         <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"/>
         <rdf:type rdf:resource="http://www.ics.forth.gr/isl/CRMgeo/SP10_Declarative_Time-Span"/>
+        <time1:hasDateTimeDescription rdf:resource="http://www.wikidata.org/entity/June9_Pattern"/>
         <rdfs:label>Feast_Day_Columba</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1765,21 +1804,20 @@ Examples:
     
 
 
+    <!-- http://ontology.holywells.link/ontology/Inventory_Number_Q126456441_KHW056_Q132817615 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Inventory_Number_Q126456441_KHW056_Q132817615">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E42_Identifier"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://ontology.holywells.link/ontology/Irish_Sites_and_Monuments_Record_ID -->
 
     <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/Irish_Sites_and_Monuments_Record_ID">
         <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E42_Identifier"/>
         <cidoc-crm:P2_has_type rdf:resource="http://ontology.holywells.link/ontology/Type_Irish_Sites_and_Monuments_Record_ID"/>
         <cidoc-crm:P90_has_value>KK032-017011-</cidoc-crm:P90_has_value>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://ontology.holywells.link/ontology/June_9 -->
-
-    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/June_9">
-        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E49_Time_Appellation"/>
-        <rdfs:comment>June 9</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -2007,9 +2045,9 @@ Examples:
 
     <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/YouTube_Video_kxRnXwX0HAM">
         <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Video"/>
-        <cidoc-crm:P67_refers_to rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
         <cidoc-crm:P1_is_identified_by rdf:resource="http://ontology.holywells.link/ontology/YT_ID_kxRnXwX0HAM"/>
         <cidoc-crm:P43_has_dimension rdf:resource="http://ontology.holywells.link/ontology/Dimension_kxRnXwX0HAM"/>
+        <cidoc-crm:P67_refers_to rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
     </owl:NamedIndividual>
     
 
@@ -2061,12 +2099,41 @@ Examples:
     
 
 
+    <!-- http://ontology.holywells.link/ontology/URL_heritagedata.maps.arcgis.com/apps/webappviewer/index.html?id=0c9eb9575b544081b0d296436d8f60f8&amp;query=18a4b61b268-layer-9%2CSMRS%2CKK026-014&#45;&#45;&#45;&#45; -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/URL_heritagedata.maps.arcgis.com/apps/webappviewer/index.html?id=0c9eb9575b544081b0d296436d8f60f8&amp;query=18a4b61b268-layer-9%2CSMRS%2CKK026-014----">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E42_Identifier"/>
+        <cidoc-crm:P67_refers_to rdf:resource="http://ontology.holywells.link/ontology/E17_Type_Assignment_Q1371047_Q122258940"/>
+        <cidoc-crm:P90_has_value>https://heritagedata.maps.arcgis.com/apps/webappviewer/index.html?id=0c9eb9575b544081b0d296436d8f60f8&amp;query=18a4b61b268-layer-9%2CSMRS%2CKK026-014----</cidoc-crm:P90_has_value>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://ontology.holywells.link/ontology/http://ontology.holywells.link/ontology/E65_Picture_Q130265942_Q122222699 -->
 
     <owl:NamedIndividual rdf:about="http://ontology.holywells.link/ontology/http://ontology.holywells.link/ontology/E65_Picture_Q130265942_Q122222699">
         <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E65_Creation"/>
         <cidoc-crm:P14_carried_out_by rdf:resource="http://ontology.holywells.link/ontology/Q130265942_Group"/>
         <cidoc-crm:P94_has_created rdf:resource="http://ontology.holywells.link/ontology/Picture_Q130265942_Q122222699"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/June9_Pattern -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/June9_Pattern">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#GeneralDateTimeDescription"/>
+        <time1:day rdf:datatype="http://www.w3.org/2006/time#generalDay">9</time1:day>
+        <time1:month rdf:datatype="http://www.w3.org/2006/time#generalMonth">6</time1:month>
+        <rdfs:label>Recurring every year on June 9</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Publication_Date_Q126555558 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Publication_Date_Q126555558">
+        <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"/>
     </owl:NamedIndividual>
     
 
@@ -2115,6 +2182,7 @@ Examples:
 
     <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q122258940">
         <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Holy_Well_Semantic_Concept"/>
+        <cidoc-crm:P2_has_type rdf:resource="http://ontology.holywells.link/ontology/E55_Type_Holy_Well_Semantic_Concept"/>
         <rdfs:label>Toberbride</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2134,8 +2202,8 @@ Examples:
 
     <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q126374601">
         <rdf:type rdf:resource="http://www.wikidata.org/entity/Monograph"/>
-        <schema:description xml:lang="en">book by Owen O&apos;Kelly describing the townlands of Co. Kilkenny and their monuments</schema:description>
         <cidoc-crm:P70_documents rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
+        <schema:description xml:lang="en">book by Owen O&apos;Kelly describing the townlands of Co. Kilkenny and their monuments</schema:description>
         <rdfs:label>O&apos;Kelly: The Place-Names of County Kilkenny</rdfs:label>
         <skos:altLabel xml:lang="en">The Place-Names of COUNTY KILKENNY</skos:altLabel>
     </owl:NamedIndividual>
@@ -2157,6 +2225,7 @@ Examples:
 
     <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q126454603">
         <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Holy_Well_Semantic_Concept"/>
+        <cidoc-crm:P2_has_type rdf:resource="http://ontology.holywells.link/ontology/E55_Type_Holy_Well_Semantic_Concept"/>
         <cidoc-crm:P44_has_condition rdf:resource="http://www.wikidata.org/entity/Q63065035"/>
         <rdfs:label>St. Mogue&apos;s Well</rdfs:label>
     </owl:NamedIndividual>
@@ -2170,9 +2239,6 @@ Examples:
         <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Holy_Well"/>
         <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Holy_Well_Semantic_Concept"/>
         <rdf:type rdf:resource="http://ontology.holywells.link/ontology/Water_Source"/>
-        <CRMgeo:Q4_has_spatial_projection rdf:resource="http://ontology.holywells.link/ontology/SP2_Columbkille&apos;s_Well"/>
-        <schema:description xml:lang="en">holy well in Inistioge</schema:description>
-        <schema:description xml:lang="ar">موقع أثري في مقاطعة كيلكيني، جمهورية أيرلند</schema:description>
         <cidoc-crm:P10_falls_within rdf:resource="http://www.wikidata.org/entity/Q104266220"/>
         <cidoc-crm:P10_falls_within rdf:resource="http://www.wikidata.org/entity/Q180231"/>
         <cidoc-crm:P10_falls_within rdf:resource="http://www.wikidata.org/entity/Q27"/>
@@ -2183,6 +2249,9 @@ Examples:
         <cidoc-crm:P1_is_identified_by rdf:resource="http://ontology.holywells.link/ontology/OpenStreetMap_node_ID"/>
         <cidoc-crm:P1_is_identified_by rdf:resource="http://ontology.holywells.link/ontology/Q126456441_name"/>
         <cidoc-crm:P1_is_identified_by rdf:resource="http://ontology.holywells.link/ontology/Wiki_Loves_Monuments_ID"/>
+        <CRMgeo:Q4_has_spatial_projection rdf:resource="http://ontology.holywells.link/ontology/SP2_Columbkille&apos;s_Well"/>
+        <schema:description xml:lang="en">holy well in Inistioge</schema:description>
+        <schema:description xml:lang="ar">موقع أثري في مقاطعة كيلكيني، جمهورية أيرلند</schema:description>
         <rdfs:label>Columbkille&apos;s Well</rdfs:label>
         <skos:altLabel xml:lang="en">Saint Columbkille&apos;s Well</skos:altLabel>
         <skos:altLabel xml:lang="en">St Colombkille&apos;s Well</skos:altLabel>
@@ -2218,6 +2287,7 @@ Examples:
         <rdf:type rdf:resource="http://www.wikidata.org/entity/Map"/>
         <cidoc-crm:P62_depicts rdf:resource="http://www.wikidata.org/entity/Q27"/>
         <cidoc-crm:P70_documents rdf:resource="http://ontology.holywells.link/ontology/E14_Condition_Assignment_Q122258940_Q55654238"/>
+        <cidoc-crm:P70_documents rdf:resource="http://ontology.holywells.link/ontology/E17_Type_Assignment_Q1371047_Q122258940"/>
         <cidoc-crm:P70_documents rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
         <rdfs:label>6 Inch First Edition Ordnance Survey map of Ireland</rdfs:label>
     </owl:NamedIndividual>
@@ -2230,6 +2300,7 @@ Examples:
         <rdf:type rdf:resource="http://www.wikidata.org/entity/Map"/>
         <cidoc-crm:P62_depicts rdf:resource="http://www.wikidata.org/entity/Q27"/>
         <cidoc-crm:P70_documents rdf:resource="http://ontology.holywells.link/ontology/E14_Condition_Assignment_Q122258940_Q55654238"/>
+        <cidoc-crm:P70_documents rdf:resource="http://ontology.holywells.link/ontology/E17_Type_Assignment_Q1371047_Q122258940"/>
         <cidoc-crm:P70_documents rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
         <rdfs:label>25 inch mapping series (Ireland)</rdfs:label>
     </owl:NamedIndividual>
@@ -2242,6 +2313,7 @@ Examples:
         <rdf:type rdf:resource="http://www.wikidata.org/entity/Map"/>
         <cidoc-crm:P62_depicts rdf:resource="http://www.wikidata.org/entity/Q27"/>
         <cidoc-crm:P70_documents rdf:resource="http://ontology.holywells.link/ontology/E14_Condition_Assignment_Q122258940_Q55654238"/>
+        <cidoc-crm:P70_documents rdf:resource="http://ontology.holywells.link/ontology/E17_Type_Assignment_Q1371047_Q122258940"/>
         <cidoc-crm:P70_documents rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
         <rdfs:label>6 Inch Last Edition Ordnance Survey map of Ireland</rdfs:label>
     </owl:NamedIndividual>
@@ -2255,6 +2327,7 @@ Examples:
         <rdf:type rdf:resource="http://www.wikidata.org/entity/Doctoral_Thesis"/>
         <cidoc-crm:P70_documents rdf:resource="http://ontology.holywells.link/ontology/E14_Condition_Assignment_Q122258940_Q56556915"/>
         <cidoc-crm:P70_documents rdf:resource="http://ontology.holywells.link/ontology/E14_Condition_Assignment_Q122258940_Q63065035"/>
+        <cidoc-crm:P70_documents rdf:resource="http://ontology.holywells.link/ontology/E17_Type_Assignment_Q1371047_Q122258940"/>
         <cidoc-crm:P70_documents rdf:resource="http://www.wikidata.org/entity/Q126456441"/>
         <rdfs:label>Padraig Ó Dálaigh: The holy wells of County Kilkenny II</rdfs:label>
         <owl:versionInfo>unpublished</owl:versionInfo>
