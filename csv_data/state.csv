@@ -1,0 +1,6 @@
+subject_q,predicate_p,object_q,object,stated_in_q,stated_in_label,creator,creator_q,depicts,depicts_q,instance of,instance of_q,"dissolved, abolished or demolished date","dissolved, abolished or demolished date_q",publication date,publication date_q
+Q122258940,P5817,Q55654238,in use,Q126528008,6 Inch First Edition Ordnance Survey map of Ireland,British Ordnance Survey,Q548721,Ireland,Q57695350,map,Q4006,,,1829-01-01T00:00:00Z,
+Q122258940,P5817,Q55654238,in use,Q126540348,25 inch mapping series (Ireland),British Ordnance Survey,Q548721,Ireland,Q57695350,map,Q4006,1913-01-01T00:00:00Z,,1897-01-01T00:00:00Z,
+Q122258940,P5817,Q55654238,in use,Q126555558,6 Inch Last Edition Ordnance Survey map of Ireland,British Ordnance Survey,Q548721,Ireland,Q57695350,map,Q4006,,,,
+Q122258940,P5817,Q63065035,abandoned,Q126875543,,,,,,,,,,,
+Q122258940,P5816,Q56556915,demolished or destroyed,Q126875543,,,,,,,,,,,

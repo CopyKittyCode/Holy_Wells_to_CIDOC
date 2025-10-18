@@ -1,0 +1,5 @@
+subject_q,subject,object_q,object,instance_of_q,instance_of
+Q126472950,Well of the Tree,Q12204,tuberculosis,Q12136,disease
+Q126472950,Well of the Tree,Q12204,tuberculosis,Q314676,notifiable disease
+Q126472950,Well of the Tree,Q12204,tuberculosis,Q112193867,class of disease
+Q126472950,Well of the Tree,Q35805,cough,Q130753312,symptom type

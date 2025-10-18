@@ -1,0 +1,5 @@
+subject_q,subject,object_q,object,instance_of_q,instance_of
+Q122302608,St. Kieran’s Well,Q86,headache,Q1451794,women's disease
+Q122302608,St. Kieran’s Well,Q86,headache,Q130753312,symptom type
+Q122302608,St. Kieran’s Well,Q21077147,eye pain,Q169872,symptom
+Q122302608,St. Kieran’s Well,Q21077147,eye pain,Q112965645,symptom or sign
