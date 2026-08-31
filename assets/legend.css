@@ -1,0 +1,70 @@
+/* ============================================================
+   LEGEND
+   ============================================================ */
+
+#legend-box {
+    transform-origin: top left;
+}
+
+
+/* ============================================================
+   Legend rows
+   ============================================================ */
+
+#legend-box .legend-row {
+    display: flex;
+    align-items: center;
+
+    box-sizing: border-box;
+}
+
+
+/* ============================================================
+   Legend symbol
+   ============================================================ */
+
+#legend-box .legend-symbol {
+    display: inline-block;
+
+    font-weight: bold;
+
+    margin-right: 8px;
+
+    line-height: 1;
+
+    flex-shrink: 0;
+}
+
+
+/* ============================================================
+   Legend text
+   ============================================================ */
+
+#legend-box .legend-text {
+    display: inline-block;
+
+    line-height: 1.2;
+
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   Resize handle
+   ============================================================ */
+
+#legend-resize-handle {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+
+/* ============================================================
+   Prevent accidental selection
+   ============================================================ */
+
+#legend-box,
+#legend-box * {
+    user-select: none;
+    -webkit-user-select: none;
+}
