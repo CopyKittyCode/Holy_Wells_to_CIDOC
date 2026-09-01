@@ -12,7 +12,6 @@ project_root/
 │
 └── ontology/               # Custom ontologies and OBDA mappings for Protégé
     ├── HolyWells_Ontology.obda           # OBDA mappings sample. 
-    ├── HolyWells_Ontology.properties     # Login details for postgres driver
     ├── cataog-v001.xml     		  # catalog for ontology import from the ontologies folder
     └── HolyWells_Ontology.rdf            # The ontology integrating holy wells with CIDOC
 
