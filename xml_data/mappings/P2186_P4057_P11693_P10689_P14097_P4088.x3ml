@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<x3ml version="1.0" source_type="xpath">
+
+    <namespaces>
+        <namespace prefix="hw"
+            uri="http://ontology.holywells.link/ontology/" />
+        <namespace prefix="crm"
+            uri="http://www.cidoc-crm.org/cidoc-crm/" />
+        <namespace prefix="owl"
+            uri="http://www.w3.org/2002/07/owl#" />
+        <namespace prefix="rdf"
+            uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#" />
+        <namespace prefix="rdfs"
+            uri="http://www.w3.org/2000/01/rdf-schema#" />
+        <namespace prefix="skos"
+            uri="http://www.w3.org/2004/02/skos/core#" />
+        <namespace prefix="xsd"
+            uri="http://www.w3.org/2001/XMLSchema#" />
+    </namespaces>
+
+
+    <!-- ===================================================== -->
+    <!-- HolyWell P1_is_defined_by E42_Identifier_HolyWellQcode_ID -->
+    <!-- E42_Identifier_HolyWellQcode_ID P2_has_type E55_Type_concatstring-->
+    <!-- E42_Identifier_HolyWellQcode_ID P190 has value -->
+    <!-- ===================================================== -->
+    <mappings>
+        <mapping>
+            <domain>
+                <source_node>
+                    //*[local-name()='binding' and @name='subject']
+                </source_node>
+
+                <target_node>
+                    <entity>
+                        <type>owl:NamedIndividual</type>
+
+                        <instance_generator name="URIorUUID">
+                            <arg name="text" type="xpath">
+                                ../*[local-name()='binding' and
+                                @name='subject']/*[local-name()='uri']/text()
+                            </arg>
+                        </instance_generator>
+
+                        <additional>
+                            <relationship>crm:P1_is_identified_by</relationship>
+
+                            <entity>
+                                <type>crm:E42_Identifier</type>
+
+                                <instance_generator name="URIorUUID">
+                                    <arg name="text" type="xpath">
+                                        concat(
+                                        'http://ontology.holywells.link/ontology/E42_Identifier_',
+                                        substring-after(../*[local-name()='binding' and
+                                        @name='subject']/*[local-name()='uri']/text(),
+                                        'http://www.wikidata.org/entity/'), '_',
+                                        ../*[local-name()='binding' and
+                                        @name='object']/*[local-name()='literal']/text())
+                                    </arg>
+                                </instance_generator>
+
+                                <additional>
+                                    <relationship>crm:P2_has_type</relationship>
+                                    <entity>
+                                        <type>crm:E55_Type</type>
+
+                                        <instance_generator name="CapitalizeWords">
+
+                                            <arg name="prefix" type="constant">
+                                                http://ontology.holywells.link/ontology/E55_Type_</arg>
+
+                                            <arg name="text" type="xpath">
+                                                ..//*[local-name()='binding' and
+                                                @name='propertyLabel']
+                                                /*[local-name()='literal']/text()
+                                            </arg>
+
+                                        </instance_generator>
+                                    </entity>
+
+                                </additional>
+
+
+                                <additional>
+                                    <relationship>crm:P190_has_symbolic_content</relationship>
+
+                                    <entity>
+                                        <type>xsd:string</type>
+
+                                        <instance_generator name="TypedLiteralGenerator">
+                                            <arg name="text" type="xpath">
+                                                ../*[local-name()='binding'
+                                                and @name='object']
+                                                /*[local-name()='literal']/text()
+                                            </arg>
+                                        </instance_generator>
+                                    </entity>
+                                </additional>
+                            </entity>
+                        </additional>
+                    </entity>
+                </target_node>
+            </domain>
+        </mapping>
+    </mappings>
+</x3ml>

@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<x3ml version="1.0" source_type="xpath">
+
+    <namespaces>
+
+        <namespace prefix="hw"
+            uri="http://ontology.holywells.link/ontology/" />
+
+        <namespace prefix="crm"
+            uri="http://www.cidoc-crm.org/cidoc-crm/" />
+
+        <namespace prefix="owl"
+            uri="http://www.w3.org/2002/07/owl#" />
+
+        <namespace prefix="rdf"
+            uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#" />
+
+        <namespace prefix="rdfs"
+            uri="http://www.w3.org/2000/01/rdf-schema#" />
+
+        <namespace prefix="skos"
+            uri="http://www.w3.org/2004/02/skos/core#" />
+
+        <namespace prefix="xsd"
+            uri="http://www.w3.org/2001/XMLSchema#" />
+
+    </namespaces>
+
+
+    <mappings>
+
+        <!-- ===================================================== -->
+        <!-- E17 -> P41_classified -> Subject -->
+        <!-- E17 -> P42_assigned -> E55 Type -->
+        <!-- ===================================================== -->
+
+        <mapping>
+            <domain>
+                <source_node>
+                    //*[local-name()='binding' and @name='object']
+                </source_node>
+
+                <target_node>
+                    <entity>
+
+                        <type>crm:E17_Type_Assignment</type>
+
+                        <instance_generator name="URIorUUID">
+                            <!--E17_Type_Assignment_SubjectQcode_AssignedClassQcode -->
+
+                            <arg name="text" type="xpath"> concat(
+                                'http://ontology.holywells.link/ontology/E17_Type_Assignment_',
+                                substring-after( ../*[local-name()='binding' and
+                                @name='subject']/*[local-name()='uri']/text(),
+                                'http://www.wikidata.org/entity/') , '_',
+                                substring-after(../*[local-name()='binding' and
+                                @name='object']/*[local-name()='uri']/text(),
+                                'http://www.wikidata.org/entity/' ) ) </arg>
+
+                        </instance_generator>
+
+                        <!-- E17 -> P41_classified -> Subject -->
+                        <additional>
+                            <relationship>crm:P41_classified</relationship>
+
+                            <entity>
+
+                                <type>owl:NamedIndividual</type>
+                                <instance_generator name="URIorUUID">
+
+                                    <arg name="text" type="xpath">
+                                        ../*[local-name()='binding' and @name='subject']
+                                        /*[local-name()='uri']/text()
+                                    </arg>
+
+                                </instance_generator>
+
+                                <label_generator name="SimpleLabel">
+                                    <arg name="label" type="xpath">
+                                        ../*[local-name()='binding' and @name='subjectLabel']
+                                        /*[local-name()='literal' and @xml:lang ='en']/text(),
+                                        &quot;'&quot;
+                                    </arg>
+
+                                    <arg name="language" type="constant">en</arg>
+
+                                </label_generator>
+
+                            </entity>
+                        </additional>
+
+                        <!-- E17 -> P42_assigned -> E55_Type -->
+                        <additional>
+                            <relationship>crm:P42_assigned</relationship>
+                            <entity>
+
+                                <type>crm:E55_Type</type>
+
+                                <instance_generator name="CapitalizeWords">
+
+                                    <arg name="prefix" type="constant">
+                                        http://ontology.holywells.link/ontology/E55_Type_</arg>
+
+                                    <arg name="text" type="xpath">
+                                        ..//*[local-name()='binding' and @name='objectLabel']
+                                        /*[local-name()='literal' and @xml:lang ='en']/text()
+                                    </arg>
+
+                                </instance_generator>
+
+                            </entity>
+                        </additional>
+                    </entity>
+                </target_node>
+
+            </domain>
+
+        </mapping>
+
+        <!-- ===================================================== -->
+        <!-- wikidata document -> P70_documents -> E17 Type Assignment -->
+        <!-- ===================================================== -->
+
+        <mapping>
+
+            <domain>
+
+                <source_node>
+                    //*[local-name()='binding' and @name='statedIn']
+                </source_node>
+
+                <target_node>
+                    <!-- Create individual for the document -->
+                    <entity>
+
+                        <type>owl:NamedIndividual</type>
+
+                        <instance_generator name="URIorUUID">
+                            <arg name="text" type="xpath">
+                                ../*[local-name()='binding' and
+                                @name='statedIn']/*[local-name()='uri']/text()
+                            </arg>
+                        </instance_generator>
+
+                        <label_generator name="SimpleLabel">
+                            <arg name="label" type="xpath">
+                                ../*[local-name()='binding' and @name='statedInLabel']
+                                /*[local-name()='literal']/text(),
+                                &quot;'&quot;
+                            </arg>
+
+                            <arg name="language" type="constant">en</arg>
+
+                        </label_generator>
+
+
+
+                        <!-- wikidata document -> P70_documents -> E17 -->
+                        <additional>
+                            <relationship>crm:P70_documents</relationship>
+                            <entity>
+                                <type>crm:E17_Type_Assignment</type>
+
+                                <instance_generator name="URIorUUID">
+                                    <!--E17_Type_Assignment_SubjectQcode_AssignedClassQcode -->
+
+                                    <arg name="text" type="xpath"> concat(
+                                        'http://ontology.holywells.link/ontology/E17_Type_Assignment_',
+                                        substring-after( ../*[local-name()='binding' and
+                                        @name='subject']/*[local-name()='uri']/text(),
+                                        'http://www.wikidata.org/entity/') , '_',
+                                        substring-after(../*[local-name()='binding' and
+                                        @name='object']/*[local-name()='uri']/text(),
+                                        'http://www.wikidata.org/entity/' ) ) </arg>
+                                </instance_generator>
+
+                            </entity>
+                        </additional>
+
+                    </entity>
+
+                </target_node>
+
+            </domain>
+
+        </mapping>
+
+
+
+        <!-- ===================================================== -->
+        <!-- wikidata document rdfs type stated by wikidata -->
+        <!-- ===================================================== -->
+
+        <mapping>
+            <domain>
+                <source_node>
+                    //*[local-name()='binding' and @name='statedInInstanceOfLabel']
+                </source_node>
+
+                <target_node>
+
+                    <entity>
+
+                        <type>owl:NamedIndividual</type>
+
+                        <instance_generator name="URIorUUID">
+                            <arg name="text" type="xpath">
+                                ../*[local-name()='binding' and
+                                @name='statedIn']/*[local-name()='uri']/text()
+                            </arg>
+                        </instance_generator>
+
+                        <additional>
+
+                            <relationship>rdf:type</relationship>
+
+                            <entity>
+                                <type>owl:Class</type>
+
+                                <instance_generator name="CapitalizeWords">
+
+                                    <arg name="prefix" type="constant">
+                                        http://ontology.holywells.link/ontology/
+                                    </arg>
+
+                                    <arg name="text" type="xpath">
+                                        ./*[local-name()='literal']/text()
+                                    </arg>
+                                </instance_generator>
+                            </entity>
+                        </additional>
+                    </entity>
+                </target_node>
+            </domain>
+        </mapping>
+
+        <!-- ===================================================== -->
+        <!-- types stated by wikidata rdf:subclass E31_Document -->
+        <!-- ===================================================== -->
+
+        <mapping>
+            <domain>
+                <source_node>
+                    //*[local-name()='result'][
+                    *[local-name()='binding' and @name='statedInInstanceOfLabel']
+                    ]
+                </source_node>
+
+                <target_node>
+
+                    <entity>
+                        <type>owl:Class</type>
+
+                        <instance_generator name="CapitalizeWords">
+
+                            <arg name="prefix" type="constant">
+                                http://ontology.holywells.link/ontology/
+                            </arg>
+
+                            <arg name="text" type="xpath">
+                                *[local-name()='binding'
+                                and @name='statedInInstanceOfLabel']
+                                /*[local-name()='literal']/text()
+                            </arg>
+                        </instance_generator>
+
+                        <additional>
+                            <relationship>rdfs:subClassOf</relationship>
+
+                            <entity>
+                                <type>owl:Class</type>
+
+                                <instance_generator name="CapitalizeWords">
+
+                                    <arg name="prefix" type="constant">
+                                        http://www.cidoc-crm.org/cidoc-crm/
+                                    </arg>
+
+                                    <arg name="text" type="constant">
+                                        E31_Document
+                                    </arg>
+                                </instance_generator>
+                            </entity>
+                        </additional>
+
+                    </entity>
+                </target_node>
+            </domain>
+        </mapping>
+
+
+        <!-- ===================================================== -->
+        <!-- Holy Well rdf:type Holy_Well_Semantic concept if stated so in wikidata -->
+        <!--Holy
+        Well Semantic Concept subclass of E28_Conceptual_Object, E25_Human_Made_Feature-->
+        <!-- ===================================================== -->
+
+        <mapping>
+            <domain>
+                <source_node>
+                    //*[local-name()='result'][
+                    *[local-name()='binding' and @name='objectLabel']
+                    /*[local-name()='literal'
+                    and normalize-space(.) = 'Holy Well Semantic Concept']
+                    ]
+                </source_node>
+
+                <target_node>
+
+                    <entity>
+
+                        <type>owl:NamedIndividual</type>
+
+                        <instance_generator name="URIorUUID">
+                            <arg name="text" type="xpath">
+                                *[local-name()='binding' and
+                                @name='subject']/*[local-name()='uri']/text()
+                            </arg>
+                        </instance_generator>
+
+                        <additional>
+
+                            <relationship>rdf:type</relationship>
+
+                            <entity>
+                                <type>owl:Class</type>
+
+                                <instance_generator name="CapitalizeWords">
+
+                                    <arg name="prefix" type="constant">
+                                        http://ontology.holywells.link/ontology/
+                                    </arg>
+
+                                    <arg name="text" type="xpath">
+                                        *[local-name()='binding' and @name='objectLabel']
+                                        /*[local-name()='literal']/text()
+                                    </arg>
+                                </instance_generator>
+                            </entity>
+                        </additional>
+
+                        <additional>
+                            <relationship>rdfs:subClassOf</relationship>
+
+                            <entity>
+                                <type>owl:Class</type>
+
+                                <instance_generator name="CapitalizeWords">
+
+                                    <arg name="prefix" type="constant">
+                                        http://www.cidoc-crm.org/cidoc-crm/
+                                    </arg>
+
+                                    <arg name="text" type="constant">
+                                        E28_Conceptual_Object
+                                    </arg>
+                                </instance_generator>
+                            </entity>
+                        </additional>
+
+                        <additional>
+                            <relationship>rdfs:subClassOf</relationship>
+
+                            <entity>
+                                <type>owl:Class</type>
+
+                                <instance_generator name="CapitalizeWords">
+
+                                    <arg name="prefix" type="constant">
+                                        http://www.cidoc-crm.org/cidoc-crm/
+                                    </arg>
+
+                                    <arg name="text" type="constant">
+                                        E25_Human_Made_Feature
+                                    </arg>
+                                </instance_generator>
+                            </entity>
+                        </additional>
+                    </entity>
+                </target_node>
+            </domain>
+        </mapping>
+
+    </mappings>
+
+</x3ml>

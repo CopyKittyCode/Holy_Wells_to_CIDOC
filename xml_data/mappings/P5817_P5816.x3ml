@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<x3ml version="1.0" source_type="xpath">
+
+    <namespaces>
+
+        <namespace prefix="hw"
+            uri="http://ontology.holywells.link/ontology/" />
+
+        <namespace prefix="crm"
+            uri="http://www.cidoc-crm.org/cidoc-crm/" />
+
+        <namespace prefix="owl"
+            uri="http://www.w3.org/2002/07/owl#" />
+
+        <namespace prefix="rdf"
+            uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#" />
+
+        <namespace prefix="rdfs"
+            uri="http://www.w3.org/2000/01/rdf-schema#" />
+
+        <namespace prefix="skos"
+            uri="http://www.w3.org/2004/02/skos/core#" />
+
+        <namespace prefix="xsd"
+            uri="http://www.w3.org/2001/XMLSchema#" />
+
+    </namespaces>
+
+
+    <mappings>
+
+
+        <!-- ===================================================== -->
+        <!-- Wikidata subject -> Holy Well individual -->
+        <!-- ===================================================== -->
+
+        <mapping>
+
+            <domain>
+                <source_node>
+                    //*[local-name()='binding' and @name='subject'] </source_node>
+
+                <target_node>
+
+                    <entity>
+
+                        <type>owl:NamedIndividual</type>
+                        <instance_generator name="URIorUUID">
+                            <arg name="text" type="xpath">
+                                ./*[local-name()='uri']/text() </arg>
+
+                        </instance_generator>
+
+                    </entity>
+
+                </target_node>
+
+            </domain>
+
+        </mapping>
+
+
+        <!-- ===================================================== -->
+        <!-- E14 Condition Assessment -->
+        <!-- E14 -> P140_assigned_attribute_to -> Subject -->
+        <!-- E14 -> P141_assigned -> E3_in use' -->
+        <!-- E14 -> P177_assigned_property_of_type -> E55_use_state -->
+        <!-- E14 -> P177_assigned_property_of_type -> E55_conservation_state -->
+        <!-- ===================================================== -->
+
+        <mapping>
+
+            <domain>
+
+                <source_node>
+                    //*[local-name()='binding' and @name='object']
+                </source_node>
+
+                <target_node>
+                    <!--E14_Condition_Assessment_SubjectQcode_AssignedConditionQcode -->
+                    <entity>
+
+                        <type>crm:E14_Condition_Assessment</type>
+
+                        <instance_generator name="URIorUUID">
+                            <arg name="text" type="xpath"> concat(
+                                'http://ontology.holywells.link/ontology/E14_Condition_Assessment_',
+                                substring-after( ../*[local-name()='binding' and @name='subject']
+                                /*[local-name()='uri']/text(), 'http://www.wikidata.org/entity/') ,
+                                '_', substring-after( ./*[local-name()='uri']/text(),
+                                'http://www.wikidata.org/entity/' ) )
+                            </arg>
+                        </instance_generator>
+                        <!-- E14 -> P140_assigned_attribute_to -> subject -->
+                        <additional>
+
+                            <relationship>crm:P140_assigned_attribute_to</relationship>
+
+                            <entity>
+
+                                <type>owl:NamedIndividual</type>
+
+                                <instance_generator name="URIorUUID">
+                                    <arg name="text" type="xpath">
+                                        ../*[local-name()='binding' and
+                                        @name='subject'] /*[local-name()='uri']/text()
+                                    </arg>
+                                </instance_generator>
+
+                            </entity>
+
+                        </additional>
+
+                        <!-- E14 -> P141_assigned -> E3_Condition_State instance 'in use' -->
+                        <additional>
+
+                            <relationship>crm:P141_assigned</relationship>
+
+                            <entity>
+
+                                <type>crm:E3_Condition_State</type>
+
+                                <instance_generator name="URIorUUID">
+                                    <arg name="text" type="xpath">
+                                        ./*[local-name()='uri']/text()
+                                    </arg>
+                                </instance_generator>
+
+                                <label_generator name="SimpleLabel">
+                                    <arg name="label" type="xpath">
+                                        ../*[local-name()='binding' and @name='objectLabel']
+                                        /*[local-name()='literal' and @xml:lang ='en']/text(),
+                                        &quot;'&quot;
+                                    </arg>
+
+                                    <arg name="language" type="constant">en</arg>
+                                </label_generator>
+
+                            </entity>
+
+                        </additional>
+                        <!-- E14 -> P177_assigned_property_of_type IF P5817 THEN-> E3_use_state IF
+                        P5816 -> THEN E3_conservation_state -->
+                        <additional>
+
+                            <relationship>crm:P177_assigned_property_of_type</relationship>
+
+                            <entity>
+
+                                <type>crm:E55_Type</type>
+                                <instance_generator name="URIorUUID">
+                                    <arg name="text" type="xpath">
+                                        if (
+                                        substring-after(
+                                        ../*[local-name()='binding' and @name='property']
+                                        /*[local-name()='uri']/text(),
+                                        'http://www.wikidata.org/entity/'
+                                        ) = 'P5817'
+                                        )
+                                        then
+                                        'http://ontology.holywells.link/ontology/E3_Condition_State_use_state'
+                                        else if (
+                                        substring-after(
+                                        ../*[local-name()='binding' and @name='property']
+                                        /*[local-name()='uri']/text(),
+                                        'http://www.wikidata.org/entity/'
+                                        ) = 'P5816'
+                                        )
+                                        then
+                                        'http://ontology.holywells.link/ontology/E3_Condition_State_conservation_state'
+                                        else
+                                        ''
+                                    </arg>
+                                </instance_generator>
+
+                            </entity>
+
+                        </additional>
+
+                    </entity>
+
+                </target_node>
+
+            </domain>
+
+        </mapping>
+    </mappings>
+
+</x3ml>

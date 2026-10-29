@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<x3ml version="1.0" source_type="xpath">
+
+	<namespaces>
+
+		<namespace prefix="hw"
+			uri="http://ontology.holywells.link/ontology/" />
+
+		<namespace prefix="crm"
+			uri="http://www.cidoc-crm.org/cidoc-crm/" />
+
+		<namespace prefix="owl"
+			uri="http://www.w3.org/2002/07/owl#" />
+
+		<namespace prefix="rdf"
+			uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#" />
+
+		<namespace prefix="rdfs"
+			uri="http://www.w3.org/2000/01/rdf-schema#" />
+
+		<namespace prefix="skos"
+			uri="http://www.w3.org/2004/02/skos/core#" />
+
+		<namespace prefix="schema"
+			uri="http://schema.org/" />
+
+		<namespace prefix="xsd"
+			uri="http://www.w3.org/2001/XMLSchema#" />
+
+	</namespaces>
+
+	<mappings>
+		<!-- ===================================================== -->
+		<!-- Youtube video P1_is_defined_by yt code -->
+		<!-- yt code P90 has value -->
+		<!-- ===================================================== -->
+
+
+		<mapping>
+
+			<domain>
+
+				<source_node>
+					//*[local-name()='binding' and @name='object']
+				</source_node>
+
+				<target_node>
+
+					<entity>
+
+						<type>crm:E73_Information_Object</type>
+						<!-- YouTube_Video_ytcode -->
+						<instance_generator name="URIorUUID">
+							<arg name="text" type="xpath">
+								concat('http://ontology.holywells.link/ontology/YouTube_Video_',
+								./*[local-name()='literal']/text())
+							</arg>
+						</instance_generator>
+
+						<!-- yt video P1_identified_by yt code -->
+						<additional>
+
+							<relationship>crm:P1_identified_by</relationship>
+
+							<entity>
+
+								<type>crm:E42_Identifier</type>
+
+								<instance_generator name="URIorUUID">
+									<arg name="text" type="xpath">
+										concat('http://ontology.holywells.link/ontology/YT_ID_',
+										../*[local-name()='binding' and
+										@name='object']/*[local-name()='literal']/text())
+									</arg>
+								</instance_generator>
+
+								<!-- yt code P90 has value -->
+								<additional>
+
+									<relationship>crm:P190_has_symbolic_content</relationship>
+
+									<entity>
+
+										<type>crm:E62_String</type>
+
+										<instance_generator name="TypedLiteralGenerator">
+											<arg name="text" type="xpath">
+												../*[local-name()='binding'
+												and @name='object']
+												/*[local-name()='literal']/text()
+											</arg>
+										</instance_generator>
+
+									</entity>
+
+								</additional>
+							</entity>
+						</additional>
+
+
+						<!-- Video -> P67_refers_to -> holy well -->
+						<additional>
+
+							<relationship>crm:P67_refers_to</relationship>
+
+							<entity>
+
+								<type>owl:NamedIndividual</type>
+								<instance_generator name="URIorUUID">
+									<arg name="text" type="xpath">
+										../*[local-name()='binding' and
+										@name='subject']/*[local-name()='uri']/text()
+									</arg>
+								</instance_generator>
+
+							</entity>
+
+						</additional>
+
+					</entity>
+
+				</target_node>
+
+			</domain>
+
+		</mapping>
+
+		<!-- ===================================================== -->
+		<!-- Youtube video P43_has_dimension dimension_ytcode-->
+		<!-- dimension_ytcode p91_has_unit second-->
+		<!-- dimension_ytcode p90_has_value 131-->
+		<!-- ===================================================== -->
+
+		<mapping>
+
+			<domain>
+
+				<source_node>
+
+					//*[local-name()='result'][
+					*[local-name()='binding' and @name='qualifierProperty']
+					/*[local-name()='literal'
+					and normalize-space(.) = 'P2047']
+					]
+				</source_node>
+
+				<target_node>
+
+					<entity>
+
+						<type>crm:E73_Information_Object</type>
+						<!-- YouTube_Video_ytcode -->
+						<instance_generator name="URIorUUID">
+							<arg name="text" type="xpath">
+								concat('http://ontology.holywells.link/ontology/YouTube_Video_',
+								../*[local-name()='binding' and
+								@name='object']/*[local-name()='literal']/text())
+							</arg>
+						</instance_generator>
+
+						<!-- Youtube video P43_has_dimension dimension_ytcode-->
+						<additional>
+
+							<relationship>crm:P43_has_dimension</relationship>
+
+							<entity>
+
+								<type>crm:E54_Dimension</type>
+
+								<instance_generator name="URIorUUID">
+									<arg name="text" type="xpath">
+										concat('http://ontology.holywells.link/ontology/E54_Dimension_',
+										*[local-name()='binding' and
+										@name='object']/*[local-name()='literal']/text())
+									</arg>
+								</instance_generator>
+
+								<!--dimension
+								P91 has unit Second -->
+								<additional>
+
+									<relationship>crm:P91_has_unit</relationship>
+
+									<entity>
+
+										<type>crm:E58_Measurement_Unit</type>
+
+										<instance_generator name="URIorUUID">
+											<arg name="text" type="xpath">
+												'http://www.w3.org/2006/time#unitSecond'
+											</arg>
+										</instance_generator>
+
+									</entity>
+
+								</additional>
+
+								<!-- dimension -> P90_has_value -> nr -->
+								<additional>
+
+									<relationship>crm:P90_has_value</relationship>
+
+									<entity>
+										<type>xsd:decimal</type>
+										<instance_generator name="TypedLiteralGenerator">
+
+											<arg name="text" type="xpath">
+												*[local-name()='binding' and @name='qualifierValue']
+												/*[local-name()='literal']/text()
+											</arg>
+
+										</instance_generator>
+
+									</entity>
+
+								</additional>
+
+							</entity>
+						</additional>
+
+					</entity>
+
+				</target_node>
+
+			</domain>
+
+		</mapping>
+
+		<!-- holy well P67i_is_referred_to_by appellation-->
+		<mapping>
+
+			<domain>
+
+				<source_node>
+					//*[local-name()='result'][
+					*[local-name()='binding' and @name='qualifierProperty']
+					/*[local-name()='literal'
+					and normalize-space(.) = 'P1810']
+					]
+				</source_node>
+
+				<target_node>
+
+					<entity>
+
+						<type>owl:NamedIndividual</type>
+						<instance_generator name="URIorUUID">
+							<arg name="text" type="xpath">
+								*[local-name()='binding' and
+								@name='subject']/*[local-name()='uri']/text()
+							</arg>
+						</instance_generator>
+
+						<additional>
+
+							<relationship>crm:P67i_is_referred_to_by</relationship>
+
+							<entity>
+
+								<type>crm:E41_Appellation</type>
+								<instance_generator name="URIorUUID">
+									<arg name="text" type="xpath">
+										concat('http://ontology.holywells.link/ontology/E41_Appellation_',
+										substring-after(*[local-name()='binding' and
+										@name='subject']/*[local-name()='uri']/text(),
+										'http://www.wikidata.org/entity/'),'_',
+										*[local-name()='binding' and
+										@name='object']/*[local-name()='literal']/text())
+									</arg>
+								</instance_generator>
+
+								<additional>
+
+									<relationship>crm:P190_has_symbolic_content</relationship>
+
+									<entity>
+
+										<type>crm:E62_String</type>
+
+										<instance_generator name="TypedLiteralGenerator">
+
+											<arg name="text" type="xpath">
+												*[local-name()='binding'
+												and @name='qualifierValue']
+												/*[local-name()='literal']/text()
+											</arg>
+
+										</instance_generator>
+
+									</entity>
+
+								</additional>
+
+							</entity>
+
+
+						</additional>
+					</entity>
+				</target_node>
+			</domain>
+		</mapping>
+
+	</mappings>
+</x3ml>

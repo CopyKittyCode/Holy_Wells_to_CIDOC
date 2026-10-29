@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?><sparql xmlns="http://www.w3.org/2005/sparql-results#">
+	<head>
+		<variable name="subject"/>
+		<variable name="subjectLabel"/>
+		<variable name="property"/>
+		<variable name="propertyLabel"/>
+		<variable name="object"/>
+		<variable name="objectLabel"/>
+		<variable name="objectInstanceOf"/>
+		<variable name="objectInstanceOfLabel"/>
+		<variable name="qualifierProperty"/>
+		<variable name="qualifierPropertyLabel"/>
+		<variable name="qualifierValue"/>
+		<variable name="qualifierValueLabel"/>
+		<variable name="qualifierDescription"/>
+		<variable name="qualifierValueInstanceOf"/>
+		<variable name="qualifierValueInstanceOfLabel"/>
+		<variable name="statedIn"/>
+		<variable name="statedInLabel"/>
+		<variable name="statedInInstanceOf"/>
+		<variable name="statedInInstanceOfLabel"/>
+		<variable name="statedInProperty"/>
+		<variable name="statedInObject"/>
+		<variable name="statedInObjectLabel"/>
+	</head>
+	<results>
+		<result>
+			<binding name="property">
+				<uri>http://www.wikidata.org/entity/P11693</uri>
+			</binding>
+			<binding name="propertyLabel">
+				<literal xml:lang="en">OpenStreetMap node ID</literal>
+			</binding>
+			<binding name="subject">
+				<uri>http://www.wikidata.org/entity/Q126478330</uri>
+			</binding>
+			<binding name="subjectLabel">
+				<literal xml:lang="en">Tobar Neaska</literal>
+			</binding>
+			<binding name="object">
+				<literal>8275448045</literal>
+			</binding>
+		</result>
+	</results>
+</sparql>

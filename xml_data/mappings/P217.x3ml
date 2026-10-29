@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<x3ml version="1.0" source_type="xpath">
+
+    <namespaces>
+
+        <namespace prefix="hw"
+            uri="http://ontology.holywells.link/ontology/" />
+
+        <namespace prefix="crm"
+            uri="http://www.cidoc-crm.org/cidoc-crm/" />
+
+        <namespace prefix="owl"
+            uri="http://www.w3.org/2002/07/owl#" />
+
+        <namespace prefix="rdf"
+            uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#" />
+
+        <namespace prefix="rdfs"
+            uri="http://www.w3.org/2000/01/rdf-schema#" />
+
+        <namespace prefix="skos"
+            uri="http://www.w3.org/2004/02/skos/core#" />
+
+        <namespace prefix="schema"
+            uri="http://schema.org/" />
+
+        <namespace prefix="xsd"
+            uri="http://www.w3.org/2001/XMLSchema#" />
+
+    </namespaces>
+
+    <mappings>
+
+        <mapping>
+            <!-- ========================================================= -->
+            <!-- E15_Identifier_Assignment_SubjectQcode_id_collection -->
+            <!-- E15 -> P140_assigned_attribute_to -> Holy Well -->
+            <!-- E15 -> P16_used_specific_object -> Collection -->
+            <!-- E15 -> P177_assigned_property_of_type -> E42_Identifier -->
+            <!-- E42 -> P190_has_symbolic_content -> E62_String -->
+            <!-- ========================================================= -->
+
+            <domain>
+
+                <source_node>
+                    //*[local-name()='binding' and @name='subject']
+                </source_node>
+
+                <target_node>
+                    <!-- E15_Identifier_Assignment_Event_WellQcode_id_CollectionQcode -->
+                    <entity>
+
+                        <type>crm:E15_Identifier_Assignment</type>
+
+                        <instance_generator name="URIorUUID">
+
+                            <arg name="text" type="xpath">
+                                concat(
+                                'http://ontology.holywells.link/ontology/E15_Identifier_Assignment_',
+                                substring-after(
+                                ../*[local-name()='binding' and @name='subject']
+                                /*[local-name()='uri']/text(),
+                                'http://www.wikidata.org/entity/'
+                                ),
+                                '_',
+                                ../*[local-name()='binding' and @name='object']
+                                /*[local-name()='literal']/text(),
+                                '_',
+                                substring-after(
+                                ../*[local-name()='binding' and @name='qualifierValue']
+                                /*[local-name()='uri']/text(),
+                                'http://www.wikidata.org/entity/'
+                                )
+                                )
+                            </arg>
+
+                        </instance_generator>
+
+                        <!-- E15 -> P140_assigned_attribute_to -> Holy Well -->
+                        <additional>
+
+                            <relationship>crm:P140_assigned_attribute_to</relationship>
+
+                            <entity>
+
+                                <type>owl:NamedIndividual</type>
+
+                                <instance_generator name="URIorUUID">
+
+                                    <arg name="text" type="xpath">
+                                        ../*[local-name()='binding' and
+                                        @name='subject']
+                                        /*[local-name()='uri']/text()
+                                    </arg>
+
+                                </instance_generator>
+
+                            </entity>
+
+                        </additional>
+
+                        <!-- E15 -> P16_used_specific_object -> Collection -->
+                        <additional>
+
+                            <relationship>crm:P16_used_specific_object</relationship>
+
+                            <entity>
+
+                                <type>owl:NamedIndividual</type>
+
+                                <instance_generator name="URIorUUID">
+
+                                    <arg name="text" type="xpath">
+                                        ../*[local-name()='binding' and
+                                        @name='qualifierValue']
+                                        /*[local-name()='uri']/text()
+                                    </arg>
+
+                                </instance_generator>
+
+
+                                <!--can
+                                deal with absent bindings -->
+                                <label_generator name="SimpleLabel">
+                                    <arg name="label" type="xpath">
+                                        ../*[local-name()='binding' and
+                                        @name='qualifierValueLabel']
+                                        /*[local-name()='literal' and
+                                        @xml:lang='en']/text(),
+                                        &quot;'&quot;
+                                    </arg>
+                                    <arg name="language" type="constant">en</arg>
+                                </label_generator>
+
+                            </entity>
+
+                        </additional>
+
+                        <!-- E15 -> P177_assigned_property_of_type -> E42 -->
+                        <additional>
+
+                            <relationship>crm:P177_assigned_property_of_type</relationship>
+
+                            <entity>
+
+                                <type>crm:E42_Identifier</type>
+
+                                <instance_generator name="URIorUUID">
+                                    <arg name="text" type="xpath">
+                                        'http://www.cidoc-crm.org/cidoc-crm/E42_Identifier'
+                                    </arg>
+                                </instance_generator>
+
+                            </entity>
+
+                        </additional>
+
+                        <!-- E15 -> P37_assigned -> Inventory Number -->
+
+                        <additional>
+
+                            <relationship>crm:P37_assigned</relationship>
+
+                            <entity>
+
+                                <type>crm:E42_Identifier</type>
+
+                                <!-- Inventory_Number_HolyWellQcode_id_CollectionQcode -->
+                                <instance_generator name="URIorUUID">
+
+                                    <arg name="text" type="xpath">
+                                        concat(
+                                        'http://ontology.holywells.link/ontology/Inventory_Number_',
+                                        substring-after(
+                                        ../*[local-name()='binding' and
+                                        @name='subject']
+                                        /*[local-name()='uri']/text(),
+                                        'http://www.wikidata.org/entity/'
+                                        ),
+                                        '_',
+                                        ../*[local-name()='binding' and
+                                        @name='object']
+                                        /*[local-name()='literal']/text(),
+                                        '_',
+                                        substring-after(
+                                        ../*[local-name()='binding' and
+                                        @name='qualifierValue']
+                                        /*[local-name()='uri']/text(),
+                                        'http://www.wikidata.org/entity/'
+                                        )
+                                        )
+                                    </arg>
+
+                                </instance_generator>
+
+                                <!-- E42 -> P190_has_symbolic_content -> E62_String -->
+                                <!-- not all ids are numbers, string is ok -->
+
+                                <additional>
+
+                                    <relationship>crm:P190_has_symbolic_content</relationship>
+
+                                    <entity>
+
+                                        <type>crm:E62_String</type>
+
+                                        <instance_generator name="TypedLiteralGenerator">
+
+                                            <arg name="text" type="xpath">
+                                                ../*[local-name()='binding' and
+                                                @name='object']
+                                                /*[local-name()='literal']/text()
+                                            </arg>
+
+                                        </instance_generator>
+
+                                    </entity>
+
+                                </additional>
+
+                            </entity>
+
+                        </additional>
+
+                    </entity>
+
+                </target_node>
+
+            </domain>
+
+        </mapping>
+
+
+        <!-- ========================================================= -->
+        <!-- Collection -> rdf:type -> class stated in wikidata -->
+        <!-- ========================================================= -->
+
+
+        <mapping>
+
+            <domain>
+
+                <source_node>
+                    //*[local-name()='binding' and @name='qualifierValueInstanceOfLabel']
+                </source_node>
+
+                <target_node>
+
+                    <entity>
+
+                        <type>owl:NamedIndividual</type>
+
+                        <instance_generator name="URIorUUID">
+
+                            <arg name="text" type="xpath">
+                                ../*[local-name()='binding' and
+                                @name='qualifierValue']
+                                /*[local-name()='uri']/text()
+                            </arg>
+
+                        </instance_generator>
+
+                        <!-- Collection -> rdf:type -> class stated in wikidata -->
+
+                        <additional>
+
+                            <relationship>rdf:type</relationship>
+
+                            <entity>
+
+                                <type>owl:Class</type>
+
+                                <instance_generator name="CapitalizeWords">
+
+                                    <arg name="prefix" type="constant">
+                                        http://ontology.holywells.link/ontology/
+                                    </arg>
+
+                                    <arg name="text" type="xpath">
+                                        ../*[local-name()='binding' and
+                                        @name='qualifierValueInstanceOfLabel']/*[local-name()='literal']/text()
+                                    </arg>
+
+                                </instance_generator>
+
+                            </entity>
+
+                        </additional>
+
+                    </entity>
+
+                </target_node>
+
+            </domain>
+
+        </mapping>
+
+        <!-- ===================================================== -->
+        <!-- types stated by wikidata rdf:subclass E73_Information_Object -->
+        <!-- ===================================================== -->
+
+        <mapping>
+            <domain>
+                <source_node>
+                    //*[local-name()='result'][
+                    *[local-name()='binding' and @name='qualifierValueInstanceOfLabel']
+                    ]
+                </source_node>
+
+                <target_node>
+
+                    <entity>
+                        <type>owl:Class</type>
+
+                        <instance_generator name="CapitalizeWords">
+
+                            <arg name="prefix" type="constant">
+                                http://ontology.holywells.link/ontology/
+                            </arg>
+
+                            <arg name="text" type="xpath">
+                                *[local-name()='binding'
+                                and @name='qualifierValueInstanceOfLabel']
+                                /*[local-name()='literal']/text()
+                            </arg>
+                        </instance_generator>
+
+                        <additional>
+                            <relationship>rdfs:subClassOf</relationship>
+
+                            <entity>
+                                <type>owl:Class</type>
+
+                                <instance_generator name="CapitalizeWords">
+
+                                    <arg name="prefix" type="constant">
+                                        http://www.cidoc-crm.org/cidoc-crm/
+                                    </arg>
+
+                                    <arg name="text" type="constant">
+                                        E73_Information_Object
+                                    </arg>
+                                </instance_generator>
+                            </entity>
+                        </additional>
+
+                    </entity>
+                </target_node>
+            </domain>
+        </mapping>
+
+    </mappings>
+
+</x3ml>
